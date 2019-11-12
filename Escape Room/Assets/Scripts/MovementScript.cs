@@ -16,25 +16,31 @@ public class MovementScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.W))
+        //Rotate using arrow keys
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.UpArrow))
         {
-            rb.AddRelativeForce(new Vector3(0.0f, 0.0f, movementSpeed * - 1));
+            transform.Rotate(new Vector3((Input.GetAxis("Vertical") * rotationSpeed * Time.fixedDeltaTime * -1), 0.0f, 0.0f));
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(new Vector3(0.0f, (Input.GetAxis("Horizontal") * rotationSpeed * Time.fixedDeltaTime), 0.0f));
         }
-        if (Input.GetKey(KeyCode.S))
+        //Movement using WASD
+        if (Input.GetKey(KeyCode.W))
         {
             rb.AddRelativeForce(new Vector3(0.0f, 0.0f, movementSpeed));
         }
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.S))
         {
-            transform.Rotate(new Vector3(0.0f, (Input.GetAxis("Horizontal") * rotationSpeed * Time.fixedDeltaTime), 0.0f));
+            rb.AddRelativeForce(new Vector3(0.0f, 0.0f, movementSpeed * -1)); //multiplied by -1 to go opposite direction
         }
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(new Vector3((Input.GetAxis("Vertical")* rotationSpeed * Time.fixedDeltaTime), 0.0f, 0.0f));
+            rb.AddRelativeForce(new Vector3(movementSpeed * -1 , 0.0f, 0.0f));
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            rb.AddRelativeForce(new Vector3(movementSpeed, 0.0f, 0.0f));
         }
     }
 }
