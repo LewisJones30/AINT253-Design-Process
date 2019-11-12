@@ -45,8 +45,10 @@ public class ObjectClicker : MonoBehaviour
                             Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
                             Instantiate(onering, secondObjectPos, transform.rotation);
                             Destroy(secondGameHit.transform.parent.gameObject);
+                            secondGameHit = null;
 
                         }
+                        // else if (firstGameHit.name == "1ring" && secondGameHit == "")
                     }
                 }
             }
