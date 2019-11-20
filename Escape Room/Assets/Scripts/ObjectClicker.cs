@@ -11,6 +11,7 @@ public class ObjectClicker : MonoBehaviour
         tworingssecondthird, tworingsthirdfourth, tworingstopfourth, tworingstopsecond, tworingstopthird, tworingssecondfourth,
         oneringsecond, oneringthird, oneringfourth, oneringtop,
         pole;
+    public Light completionLight;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,10 @@ public class ObjectClicker : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 50.0f)) //Distance of 50, will probably be changed in the future
             {
+                if (hit.transform.gameObject.name == "Cube" || hit.transform.gameObject.name == "completionCheckObj" || hit.transform.gameObject.name == "")
+                {
+                    return;
+                }
                 if (hit.transform != null)
                 {
                     print(hit.transform.gameObject);
@@ -472,6 +477,7 @@ public class ObjectClicker : MonoBehaviour
                 {
                     poleText.text = "Puzzle complete!";
                     Debug.Log("Puzzle complete!");
+                    completionLight.color = Color.green;
 
                 }
                 else

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class checkCompletion : MonoBehaviour
 {
     public Text UIText;
+    public Light completionLight;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +25,8 @@ public class checkCompletion : MonoBehaviour
         {
             if (hit.transform.gameObject.name == "4ring")
             {
-                UIText.text = "Puzzle complete!";
-                Debug.Log("Puzzle complete!");
+
+                StartCoroutine(PuzzleComplete());
 
             }
             else
@@ -38,5 +39,12 @@ public class checkCompletion : MonoBehaviour
         {
             UIText.text = "Error has occured!";
         }
+    }
+    IEnumerator PuzzleComplete()
+    {
+        UIText.text = "Puzzle complete!";
+        Debug.Log("Puzzle complete!");
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(""); //Load completion scene.
     }
 }

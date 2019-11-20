@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\ObjectClicker.cs" />
     <Compile Include="Assets\Scripts\RaycastPlayer.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\towersScene.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Lewis/Documents/GitHub/AINT253-Design-Process/Escape Room/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

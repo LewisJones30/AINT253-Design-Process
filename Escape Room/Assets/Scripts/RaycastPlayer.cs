@@ -10,7 +10,7 @@ public class RaycastPlayer : MonoBehaviour
     Ray raycast;
     public Text towersInteract;
     public int raycastLength;
-
+    public Timer timeRemainingScript;
     void Start()
     {
         towersInteract.enabled = false;
@@ -36,11 +36,15 @@ public class RaycastPlayer : MonoBehaviour
                 {
                     //Transfer player to the towers of hanoi puzzle scene - don't forget to pass puzzle variables if not done already!
                     //To do: Save current location of player to this, call back when the player leaves the puzzle
+                    //PlayerPrefs.SetFloat("playerXCoord", transform.position.x); //Currently unused
+                    //PlayerPrefs.SetFloat("playerYCoord", transform.position.y); //Currently unused
+                    //PlayerPrefs.SetFloat("playerZCoord", transform.position.z); //Currently unused
+                    PlayerPrefs.SetFloat("timeRemaining", timeRemainingScript.getTimeRemaining()); //Set time remaining
+                    timeRemainingScript.freezeTime();
+                    Debug.Log(timeRemainingScript.getTimeRemaining());
+                    SceneManager.LoadScene("towersOfHanoiPuzScene");
                     Debug.Log("E pressed!");
-                    PlayerPrefs.SetFloat("playerXCoord", transform.position.x);
-                    PlayerPrefs.SetFloat("playerYCoord", transform.position.y);
-                    PlayerPrefs.SetFloat("playerZCoord", transform.position.z);
-                    //SceneManager.SetActiveScene
+
                 }
             }
         }

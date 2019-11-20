@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434818056909463701}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.34, y: 2.9019995, z: -1.9549999}
-  m_LocalScale: {x: 2.22806, y: 4.7296, z: 1}
+  m_LocalPosition: {x: -0.12, y: 2.67, z: -1.9549999}
+  m_LocalScale: {x: 3.7115023, y: 4.7296, z: 1}
   m_Children: []
   m_Father: {fileID: 4579140126886096511}
   m_RootOrder: 0
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 4579140126886096511}
   - component: {fileID: 434818057275871231}
   m_Layer: 0
-  m_Name: Towers of Hanoi Pole (4)
+  m_Name: Towers of Hanoi Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709042578537749612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.66, y: 7.5, z: 15.52}
+  m_LocalPosition: {x: 10.669, y: 7.5, z: 15.52}
   m_LocalScale: {x: 0.3747, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 434818056909463700}
