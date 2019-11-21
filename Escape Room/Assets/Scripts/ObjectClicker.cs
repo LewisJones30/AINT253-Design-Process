@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class ObjectClicker : MonoBehaviour
 {
     GameObject firstGameHit, secondGameHit;
@@ -456,6 +457,54 @@ public class ObjectClicker : MonoBehaviour
                             secondGameHit = null;
                             checkPuzzle();
                         }
+                        else if (firstGameHit.name == "1ringSec" && secondGameHit.name == "1ringFou")
+                        {
+                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
+                            Instantiate(pole, firstObjectPos, transform.rotation);
+                            Destroy(firstGameHit.transform.parent.gameObject);
+                            firstGameHit = null;
+                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
+                            Instantiate(tworingssecondfourth, secondObjectPos, transform.rotation);
+                            Destroy(secondGameHit.transform.parent.gameObject);
+                            secondGameHit = null;
+                            checkPuzzle();
+                        }
+                        else if (firstGameHit.name == "2ringTopSec" && secondGameHit.name == "1ringThi")
+                        {
+                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
+                            Instantiate(oneringsecond, firstObjectPos, transform.rotation);
+                            Destroy(firstGameHit.transform.parent.gameObject);
+                            firstGameHit = null;
+                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
+                            Instantiate(tworingstopthird, secondObjectPos, transform.rotation);
+                            Destroy(secondGameHit.transform.parent.gameObject);
+                            secondGameHit = null;
+                            checkPuzzle();
+                        }
+                        else if (firstGameHit.name == "2ringTopThi" && secondGameHit.name == "1ringFou")
+                        {
+                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
+                            Instantiate(oneringthird, firstObjectPos, transform.rotation);
+                            Destroy(firstGameHit.transform.parent.gameObject);
+                            firstGameHit = null;
+                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
+                            Instantiate(tworingstopfourth, secondObjectPos, transform.rotation);
+                            Destroy(secondGameHit.transform.parent.gameObject);
+                            secondGameHit = null;
+                            checkPuzzle();
+                        }
+                        else if (firstGameHit.name == "2ringTopThi" && secondGameHit.name == "0ring")
+                        {
+                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
+                            Instantiate(oneringthird, firstObjectPos, transform.rotation);
+                            Destroy(firstGameHit.transform.parent.gameObject);
+                            firstGameHit = null;
+                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
+                            Instantiate(oneringtop, secondObjectPos, transform.rotation);
+                            Destroy(secondGameHit.transform.parent.gameObject);
+                            secondGameHit = null;
+                            checkPuzzle();
+                        }
                         else
                         {
                             firstGameHit = null;
@@ -478,6 +527,7 @@ public class ObjectClicker : MonoBehaviour
                     poleText.text = "Puzzle complete!";
                     Debug.Log("Puzzle complete!");
                     completionLight.color = Color.green;
+                SceneManager.LoadScene("GameWinScene");
 
                 }
                 else

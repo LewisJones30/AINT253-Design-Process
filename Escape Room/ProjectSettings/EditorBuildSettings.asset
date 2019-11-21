@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/towersOfHanoiPuzScene.unity
     guid: 354d6ba0de8e52b468f89edd7f8be47b
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9564b869f6e0a094c8a5f71a409d7292
   m_configObjects: {}
