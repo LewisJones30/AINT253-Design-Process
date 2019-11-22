@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Text: "Please note:\n\nThe timer is just running in the background - if the time
     runs out nothing will happen.\nThere are a few towers of hanoi combinations that
     may \nnot work. Please report this in the Google Forms!\nThe movement is simply
-    a placeholder and you\nmay experience some issues.\nThe controlscheme is in the
+    a placeholder and you\nmay experience some issues.\nThe control scheme is in the
     notepad document on the other screen, please read before starting. \n\n\nRules
     of the Towers of Hanoi puzzle:\n1. You can only move one disc at a time, and it
     is only the disc on the top of the stack.\n2. You cannot move a larger disc on
