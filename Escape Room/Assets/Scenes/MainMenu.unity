@@ -254,7 +254,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -265,10 +265,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Please note:\nThe timer is just running in the background.\nThere are a
-    few towers of hanoi combinations that may \nnot work. Please report this in the
-    Google Forms!\nThe movement is simply a placeholder and you\nmay experience some
-    issues."
+  m_Text: "Please note:\n\nThe timer is just running in the background - if the time
+    runs out nothing will happen.\nThere are a few towers of hanoi combinations that
+    may \nnot work. Please report this in the Google Forms!\nThe movement is simply
+    a placeholder and you\nmay experience some issues.\nThe controlscheme is in the
+    notepad document on the other screen, please read before starting. \n\n\nRules
+    of the Towers of Hanoi puzzle:\n1. You can only move one disc at a time, and it
+    is only the disc on the top of the stack.\n2. You cannot move a larger disc on
+    top of a smaller disc.\nThe objective is to get the four discs on the left to
+    the right-most disc."
 --- !u!222 &236886641
 CanvasRenderer:
   m_ObjectHideFlags: 0

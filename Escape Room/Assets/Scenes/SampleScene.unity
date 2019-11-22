@@ -2346,6 +2346,105 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: -90.686005, z: 0}
+--- !u!1001 &1853023231
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8007758696204579302, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Towers of Hanoi Pole (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 20.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081838007650457270, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081838007650457270, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081838007650457270, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.84
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af2168e9e9eb0c541aeb88290423bc0a, type: 3}
 --- !u!1 &1957877479
 GameObject:
   m_ObjectHideFlags: 0
@@ -6743,6 +6842,105 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &3068437303135287024
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8007758696204579302, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Towers of Hanoi Pole
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447500741493343221, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081838007650457270, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081838007650457270, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081838007650457270, guid: af2168e9e9eb0c541aeb88290423bc0a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.84
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af2168e9e9eb0c541aeb88290423bc0a, type: 3}
 --- !u!4 &3085473897007145394
 Transform:
   m_ObjectHideFlags: 0
@@ -13019,12 +13217,12 @@ PrefabInstance:
     - target: {fileID: 4383919922678638605, guid: 4da422cc07c97564f83c5083e3f7bbfb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.29
+      value: 5.105
       objectReference: {fileID: 0}
     - target: {fileID: 4383919922678638605, guid: 4da422cc07c97564f83c5083e3f7bbfb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.55
+      value: 21.009
       objectReference: {fileID: 0}
     - target: {fileID: 4383919922678638605, guid: 4da422cc07c97564f83c5083e3f7bbfb,
         type: 3}

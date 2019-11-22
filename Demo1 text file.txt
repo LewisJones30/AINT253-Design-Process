@@ -1,0 +1,15 @@
+Currently known bugs:
+Movement is only temporary. If you press W and then use the down arrow key at the same time, it will move up instead of down.
+Some combinations of the towers of hanoi might not work - Please let me know in the google form.
+The text within the puzzle scene is for debugging purposes, it is not going to be present in the final game!
+Some hitboxes on some of the poles are a little bit janky, and might not work correctly.
+Controls:
+
+WASD to move
+Arrow keys to rotate camera.
+
+To start the puzzle, move forward towards the desk.
+
+If any program is accidentally closed:
+Google Form: https://docs.google.com/forms/d/e/1FAIpQLSeFzjp8U1eUB5KDEFzWRKqG2bGFFcwqmjrBx2lMeQJTG8vv6g/viewform
+Build (Paste into file explorer): C:\Users\ljones30\Documents\GitHub\AINT253-Design-Process\Demo 1 Build
