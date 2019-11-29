@@ -20,7 +20,7 @@ public class ObjectClicker : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //Fire a ray at the cursor location
@@ -49,461 +49,200 @@ public class ObjectClicker : MonoBehaviour
                         //Check code here
                         if (firstGameHit.name == "4ring" && secondGameHit.name == "0ring")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(threeringssecondthirdfourth, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringtop, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            swapObjects(threeringssecondthirdfourth, oneringtop);
+                            //Instantiate(threeringssecondthirdfourth, firstObjectPos, transform.rotation);
+                            //Instantiate(oneringtop, secondObjectPos, transform.rotation);;
 
                         }
                         else if (firstGameHit.name == "3ringSecThiFou" && secondGameHit.name != "1ring")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingsthirdfourth, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringsecond, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //tworingsthirdfourth, oneringsecond
+                            swapObjects(tworingsthirdfourth, oneringsecond);
                         }
                         else if (firstGameHit.name == "2ringThiFou" && secondGameHit.name == "0ring")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringfourth, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringthird, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringfourth, oneringthird
+                            swapObjects(oneringfourth, oneringthird);
                         }
                         else if (firstGameHit.name == "1ringTop" && secondGameHit.name == "1ringSec")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingstopsecond, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, tworingstopsecond
+                            swapObjects(pole, tworingstopsecond);
                         }
                         else if (firstGameHit.name == "1ringFou" && secondGameHit.name == "0ring")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringfourth, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, oneringfourth
+                            swapObjects(pole, oneringfourth);
                         }
                         else if (firstGameHit.name == "1ringThi" && secondGameHit.name == "0ring")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringthird, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, oneringthird
+                            swapObjects(pole, oneringthird);
                         }
                         else if (firstGameHit.name == "1ringThi" && secondGameHit.name == "1ringFou")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingsthirdfourth, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, tworingsthirdfourth
+                            swapObjects(pole, tworingsthirdfourth);
                         }
                         else if (firstGameHit.name == "2ringTopSec" && secondGameHit.name == "0ring")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringsecond, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringtop, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringsecond, oneringtop
+                            swapObjects(oneringsecond, oneringtop);
+
                         }
                         else if (firstGameHit.name == "1ringSec" && secondGameHit.name == "1ringThi")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingssecondthird, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, tworingssecondthird
+                            swapObjects(pole, tworingssecondthird);
                         }
                         else if (firstGameHit.name == "2ringSecThi" && secondGameHit.name == "0ring")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringthird, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringsecond, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringthird, oneringsecond
+                            swapObjects(oneringthird, oneringsecond);
                         }
                         else if (firstGameHit.name == "1ringTop" && secondGameHit.name == "1ringThi")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingstopthird, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, tworingstopthird
+                            swapObjects(pole, tworingstopthird);
                         }
                         else if (firstGameHit.name == "1ringTop" && secondGameHit.name == "0ring")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringtop, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, oneringtop
+                            swapObjects(pole, oneringtop);
                         }
                         else if (firstGameHit.name == "1ringTop" && secondGameHit.name == "2ringSecThi")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(threeringstopsecondthird, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, threeringstopsecondthird
+                            swapObjects(pole, threeringstopsecondthird);
                         }
                         else if (firstGameHit.name == "3ringTopSecThi" && secondGameHit.name == "0ring")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingssecondthird, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringtop, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //tworingssecondthird, oneringtop
+                            swapObjects(tworingssecondthird, oneringtop);
                         }
                         else if (firstGameHit.name == "1ringSec" && secondGameHit.name == "2ringThiFou")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(threeringssecondthirdfourth, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, threeringssecondthirdfourth
+                            swapObjects(pole, threeringssecondthirdfourth);
                         }
                         else if (firstGameHit.name == "1ringTop" && secondGameHit.name == "3ringSecThiFou")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(fourrings, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, fourrings
+                            swapObjects(pole, fourrings);
                         }
                         else if (firstGameHit.name == "2ringTopSec" && secondGameHit.name == "1ringFou")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringsecond, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingstopfourth, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringsecond, tworingstopfourth
+                            swapObjects(oneringsecond, tworingstopfourth);
                         }
                         else if (firstGameHit.name == "2ringTopFou" && secondGameHit.name == "0ring")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringfourth, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringtop, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringfourth, oneringtop
+                            swapObjects(oneringfourth, oneringtop);
                         }
                         else if (firstGameHit.name == "2ringSecThi" && secondGameHit.name == "1ringFou")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringthird, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingssecondfourth, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringthird, tworingssecondfourth
+                            swapObjects(oneringthird, tworingssecondfourth);
                         }
                         else if (firstGameHit.name == "1ringThi" && secondGameHit.name == "1ringTop")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingstopthird, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, tworingstopthird
+                            swapObjects(pole, tworingstopthird);
                         }
                         else if (firstGameHit.name == "2ringsecFou" && secondGameHit.name == "1ringTop")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(threeringstopsecondfourth, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, threeringstopsecondfourth
+                            swapObjects(pole, threeringstopsecondfourth);
 
                         }
                         else if (firstGameHit.name == "2ringTopFou" && secondGameHit.name == "2ringSecThi")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringfourth, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(threeringstopsecondthird, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringfourth, threeringstopsecondthird
+                            swapObjects(oneringfourth, threeringstopsecondthird);
                         }
                         else if (firstGameHit.name == "2ringTopThi" && secondGameHit.name == "2ringSecFou")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringthird, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(threeringstopsecondfourth, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringthird, threeringstopsecondfourth
+                            swapObjects(oneringthird, threeringstopsecondfourth);
                         }
                         else if (firstGameHit.name == "3ringTopSecFou" && secondGameHit.name == "0ring")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingssecondfourth, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringtop, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //tworingssecondfourth, oneringtop
+                            swapObjects(tworingssecondfourth, oneringtop);
                         }
                         else if (firstGameHit.name == "2ringSecFou" && secondGameHit.name == "1ringThi")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringfourth, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingssecondthird, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringfourth, tworingssecondthird
+                            swapObjects(oneringfourth, tworingssecondthird);
                         }
                         else if (firstGameHit.name == "3ringTopSecThi" && secondGameHit.name == "1ringFou")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingssecondthird, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingstopfourth, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //tworingssecondthird, tworingstopfourth
+                            swapObjects(tworingssecondthird, tworingstopfourth);
                         }
                         else if (firstGameHit.name == "3ringTopSecThi" && secondGameHit.name == "0ring")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingssecondthird, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringtop, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //tworingssecondthird, oneringtop
+                            swapObjects(tworingssecondthird, oneringtop);
                         }
                         else if (firstGameHit.name == "2ringTopFou" && secondGameHit.name == "1ringThi")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringfourth, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingstopthird, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringfourth, tworingstopthird
+                            swapObjects(oneringfourth, tworingstopthird);
                         }
                         else if (firstGameHit.name == "1ringTop" && secondGameHit.name == "2ringSecFou")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(threeringstopsecondfourth, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, threeringstopsecondfourth
+                            swapObjects(pole, threeringstopsecondfourth);
                         }
                         else if (firstGameHit.name == "2ringTopFou" && secondGameHit.name == "1ringSec")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringfourth, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingstopsecond, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringfourth, tworingstopsecond
+                            swapObjects(oneringfourth, tworingstopsecond);
                         }
                         else if (firstGameHit.name == "2ringSecFou" && secondGameHit.name == "2ringTopThi")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringthird, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(threeringstopsecondfourth, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringthird, threeringstopsecondfourth
+                            swapObjects(oneringthird, threeringstopsecondfourth);
                         }
                         else if (firstGameHit.name == "2ringSecFou" && secondGameHit.name == "0ring")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringsecond, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringfourth, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringsecond, oneringfourth
+                            swapObjects(oneringfourth, oneringsecond);
                         }
                         else if (firstGameHit.name == "2ringTopThi" && secondGameHit.name == "1ringSec")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringthird, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingstopsecond, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringthird, tworingstopsecond
+                            swapObjects(oneringthird, tworingstopsecond);
                         }
                         else if (firstGameHit.name == "1ringTop" && secondGameHit.name == "1ringFou")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingstopfourth, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, tworingstopfourth
+                            swapObjects(pole, tworingstopfourth);
                         }
                         else if (firstGameHit.name == "1ringSec" && secondGameHit.name == "1ringFou")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(pole, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingssecondfourth, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //pole, tworingssecondfourth
                         }
                         else if (firstGameHit.name == "2ringTopSec" && secondGameHit.name == "1ringThi")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringsecond, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingstopthird, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringsecond, tworingstopthird
+                            swapObjects(oneringsecond, tworingstopthird);
                         }
                         else if (firstGameHit.name == "2ringTopThi" && secondGameHit.name == "1ringFou")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringthird, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(tworingstopfourth, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringthird, tworingstopfourth
+                            swapObjects(oneringthird, tworingstopfourth);
                         }
                         else if (firstGameHit.name == "2ringTopThi" && secondGameHit.name == "0ring")
                         {
-                            Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringthird, firstObjectPos, transform.rotation);
-                            Destroy(firstGameHit.transform.parent.gameObject);
-                            firstGameHit = null;
-                            Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
-                            Instantiate(oneringtop, secondObjectPos, transform.rotation);
-                            Destroy(secondGameHit.transform.parent.gameObject);
-                            secondGameHit = null;
-                            checkPuzzle();
+                            //oneringthird, oneringtop
+                            swapObjects(oneringthird, oneringtop);
+                        }
+                        else if (firstGameHit.name == "2ringTopSec" && secondGameHit.name == "2ringThiFou")
+                        {
+                            swapObjects(oneringsecond, threeringstopthirdfourth);
                         }
                         else
                         {
@@ -515,6 +254,19 @@ public class ObjectClicker : MonoBehaviour
                 }
             }
         }
+    }
+
+    void swapObjects(GameObject firstObject, GameObject secondObject)
+    {
+        Vector3 firstObjectPos = new Vector3(firstGameHit.transform.parent.gameObject.transform.position.x, firstGameHit.transform.parent.gameObject.transform.position.y, firstGameHit.transform.parent.gameObject.transform.position.z);
+        Instantiate(firstObject, firstObjectPos, transform.rotation);
+        Destroy(firstGameHit.transform.parent.gameObject);
+        firstGameHit = null;
+        Vector3 secondObjectPos = new Vector3(secondGameHit.transform.parent.gameObject.transform.position.x, secondGameHit.transform.parent.gameObject.transform.position.y, secondGameHit.transform.parent.gameObject.transform.position.z);
+        Instantiate(secondObject, secondObjectPos, transform.rotation);
+        Destroy(secondGameHit.transform.parent.gameObject);
+        secondGameHit = null;
+        checkPuzzle();
     }
     void checkPuzzle()
     {
@@ -542,3 +294,5 @@ public class ObjectClicker : MonoBehaviour
             }
         }
     }
+
+
