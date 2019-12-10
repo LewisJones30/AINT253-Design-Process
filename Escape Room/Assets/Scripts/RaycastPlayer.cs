@@ -19,7 +19,7 @@ public class RaycastPlayer : MonoBehaviour
 
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Debug.DrawRay(transform.position, forward, Color.red);
@@ -27,18 +27,25 @@ public class RaycastPlayer : MonoBehaviour
         {
             if (hit.collider.gameObject.name == "puzzle1_trigger")
             {
-                if (towersInteract.enabled == false)
+            if (PlayerPrefs.GetInt("puzzle1Complete") == 1)
+                {
+                    return;
+                }
+            if (towersInteract.enabled == false)
                 {
                     towersInteract.enabled = true; //Set interact text to visible
                 }
                 
-                if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
                 {
                     //Transfer player to the towers of hanoi puzzle scene - don't forget to pass puzzle variables if not done already!
                     //To do: Save current location of player to this, call back when the player leaves the puzzle
-                    //PlayerPrefs.SetFloat("playerXCoord", transform.position.x); //Currently unused
-                    //PlayerPrefs.SetFloat("playerYCoord", transform.position.y); //Currently unused
-                    //PlayerPrefs.SetFloat("playerZCoord", transform.position.z); //Currently unused
+                    PlayerPrefs.SetFloat("playerXCoord", transform.position.x); //Currently unused
+                    Debug.Log(transform.position.x);
+                    PlayerPrefs.SetFloat("playerYCoord", transform.position.y); //Currently unused
+                    Debug.Log(transform.position.y);
+                    PlayerPrefs.SetFloat("playerZCoord", transform.position.z); //Currently unused
+                    Debug.Log(transform.position.z);
                     PlayerPrefs.SetFloat("timeRemaining", timeRemainingScript.getTimeRemaining()); //Set time remaining
                     timeRemainingScript.freezeTime();
                     Debug.Log(timeRemainingScript.getTimeRemaining());

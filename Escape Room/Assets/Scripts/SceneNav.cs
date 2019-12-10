@@ -23,4 +23,10 @@ public class SceneNav : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+    public void backtoMainRoom()
+    {
+        PlayerPrefs.SetInt("puzzle1Complete", 2);
+        SceneManager.LoadScene("SampleScene");
+
+    }
 }

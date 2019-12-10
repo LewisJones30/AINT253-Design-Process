@@ -1180,6 +1180,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1284,6 +1285,19 @@ MonoBehaviour:
   movementSpeed: 25
   rotationSpeed: 40
   rb: {fileID: 963194229}
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab8e6f5522339047819f2c8dfd4fa68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hanoiLight: {fileID: 1644415843}
 --- !u!1 &1006021302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,6 +1840,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1644415843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3636451196318920221, guid: f2046df6c68719b4386e9a39c25ed7ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 5752976719780096998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1644415845
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644415843}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc0c9fc304d9f98489a15ede6179cd4e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &1681223674
 Rigidbody:
   m_ObjectHideFlags: 0
