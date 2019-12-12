@@ -217,6 +217,7 @@
     <Compile Include="Assets\UniGLTF\UniJSON\Scripts\MsgPack\MsgPackValue.cs" />
     <Compile Include="Assets\UniGLTF\UniJSON\Scripts\StringSegment.cs" />
     <Compile Include="Assets\UniGLTF\UniUnlit\Scripts\Utils.cs" />
+    <None Include="Assets\Fonts\dos437.txt" />
     <None Include="Assets\UniGLTF\Resources\Shaders\StandardVColor.shader" />
     <None Include="Assets\UniGLTF\Resources\Shaders\NormalMapEncoder.shader" />
     <None Include="Assets\UniGLTF\Resources\Shaders\NormalMapDecoder.shader" />
