@@ -23,6 +23,7 @@ public class gameProgessionScript : MonoBehaviour
          * This script is designed for the flow of progression to occur between scenes where required. This script is to be applied to the main camera script.
          * PlayerPrefs guide:
          * puzzle1Complete - Towers of Hanoi completion. 0 = not complete, 1 = complete, 2 = pressed back button
+         * lightPuzzleStatus - Light puzzle status. 0 = Not unlocked, 1 = Unlocked, 2 = Complete (When it equals 2 the game is completed)
          * 
          */
         if (PlayerPrefs.GetInt("puzzle1Complete") == 1) //If the towers of hanoi puzzle has been completed
@@ -44,6 +45,7 @@ public class gameProgessionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
     void newGameCode() //This can be called at the start of each game to reset the entire escape room. All of the player prefs will be entirely reset here.

@@ -27,7 +27,7 @@ public class RaycastPlayer : MonoBehaviour
         {
             if (hit.collider.gameObject.name == "puzzle1_trigger")
             {
-            if (PlayerPrefs.GetInt("puzzle1Complete") == 1)
+                if (PlayerPrefs.GetInt("puzzle1Complete") == 1)
                 {
                     return;
                 }
@@ -53,6 +53,22 @@ public class RaycastPlayer : MonoBehaviour
                     Debug.Log("E pressed!");
 
                 }
+            }
+            else if (hit.collider.gameObject.name == "Button1")
+            {
+                //Button script
+            }
+            else if (hit.collider.gameObject.name == "Button2")
+            {
+                //Button script
+            }
+            else if (hit.collider.gameObject.name == "Button3")
+            {
+                //Button script
+            }
+            else if (hit.collider.gameObject.name == "Button4")
+            {
+                //Button script
             }
         }
         else
