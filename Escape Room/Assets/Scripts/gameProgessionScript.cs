@@ -44,7 +44,6 @@ public class gameProgessionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     void newGameCode() //This can be called at the start of each game to reset the entire escape room. All of the player prefs will be entirely reset here.

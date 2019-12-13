@@ -148,7 +148,7 @@ RectTransform:
   m_GameObject: {fileID: 30405723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 25.689, y: 13.417, z: 1}
+  m_LocalScale: {x: 25.689, y: 16.278845, z: 1}
   m_Children: []
   m_Father: {fileID: 1749639919}
   m_RootOrder: 0
@@ -249,7 +249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1089, y: 335}
+  m_AnchoredPosition: {x: -1044, y: 335}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236886640
@@ -274,7 +274,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: a79eda484c4509446bbf0b17a8d5a624, type: 3}
-    m_FontSize: 50
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -293,8 +293,8 @@ MonoBehaviour:
     it.\n\nRules of the Towers of Hanoi puzzle:\n1. You can only move one disc at
     a time, and it is only the disc on the top of the stack.\n2. You cannot move a
     larger disc on top of a smaller disc.\nThe objective is to get the four discs
-    on the left to the right-most disc.\n\nIf you wish to reset the demo, there is
-    a main menu button on the main room navigation.\n"
+    on the left to the right-most disc.\nWASD to move, arrow keys to rotate camera.\n\nIf
+    you wish to reset the demo, there is a main menu button on the main room navigation.\n"
 --- !u!222 &236886641
 CanvasRenderer:
   m_ObjectHideFlags: 0

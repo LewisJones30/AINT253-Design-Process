@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 9076596652300962338, guid: f65af5c21b13ae64ea263b0e0ef91d75,
         type: 3}
       propertyPath: m_Name
-      value: Towers of Hanoi 4 Ring 2
+      value: Towers of Hanoi 4 Ring 2 Variant 1
       objectReference: {fileID: 0}
     - target: {fileID: 5453249230413035569, guid: f65af5c21b13ae64ea263b0e0ef91d75,
         type: 3}
@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 8609504494807081894, guid: f65af5c21b13ae64ea263b0e0ef91d75,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.79
+      value: -2.63
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f65af5c21b13ae64ea263b0e0ef91d75, type: 3}

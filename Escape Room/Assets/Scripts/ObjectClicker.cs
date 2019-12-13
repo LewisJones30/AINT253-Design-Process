@@ -165,12 +165,6 @@ public class ObjectClicker : MonoBehaviour
                             swapObjects(oneringthird, tworingssecondfourth);
                             checkPuzzle();
                         }
-                        else if (firstGameHit.name == "1ringThi" && secondGameHit.name == "1ringTop")
-                        {
-                            //pole, tworingstopthird
-                            swapObjects(pole, tworingstopthird);
-                            checkPuzzle();
-                        }
                         else if (firstGameHit.name == "2ringsecFou" && secondGameHit.name == "1ringTop")
                         {
                             //pole, threeringstopsecondfourth
@@ -281,6 +275,11 @@ public class ObjectClicker : MonoBehaviour
                         else if (firstGameHit.name == "2ringTopSec" && secondGameHit.name == "2ringThiFou")
                         {
                             swapObjects(oneringsecond, threeringstopthirdfourth);
+                            checkPuzzle();
+                        }
+                        else if (firstGameHit.name == "2ringTopSec" && secondGameHit.name == "1ringFou")
+                        {
+                            swapObjects(oneringsecond, tworingstopfourth);
                             checkPuzzle();
                         }
                         else

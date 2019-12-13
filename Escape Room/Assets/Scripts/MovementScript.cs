@@ -17,14 +17,23 @@ public class MovementScript : MonoBehaviour
     void FixedUpdate()
     {
         //Rotate using arrow keys
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Rotate(new Vector3((Input.GetAxis("Vertical") * rotationSpeed * Time.fixedDeltaTime * -1), 0.0f, 0.0f));
+            transform.Rotate(new Vector3((-1 * Input.GetAxis("Vertical") * rotationSpeed * Time.fixedDeltaTime), 0.0f, 0.0f));
         }
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.Rotate(new Vector3((-1 * Input.GetAxis("Vertical") * rotationSpeed * Time.fixedDeltaTime), 0.0f, 0.0f));
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(new Vector3(0.0f, (Input.GetAxis("Horizontal") * rotationSpeed * Time.fixedDeltaTime), 0.0f));
         }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Rotate(new Vector3(0.0f, (Input.GetAxis("Horizontal") * rotationSpeed * Time.fixedDeltaTime), 0.0f));
+        }
+
         //Movement using WASD
         if (Input.GetKey(KeyCode.W))
         {
