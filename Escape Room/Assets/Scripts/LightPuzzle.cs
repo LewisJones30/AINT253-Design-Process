@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LightPuzzle : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class LightPuzzle : MonoBehaviour
     public GameObject[] lights = new GameObject[24];
     public Material onMaterial;
     public Material offMaterial;
+    public Text incorrectbuttonPush;
+    public GameObject button1, button2, button3, button4;
     void Start()
     {
         
@@ -16,10 +19,6 @@ public class LightPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.E))
-        {
-            notUnlockedButtonPress();
-        }
     }
     public void notUnlockedButtonPress() //This is launched when the player has not unlocked the puzzle yet to prevent interaction.
 
@@ -38,7 +37,22 @@ public class LightPuzzle : MonoBehaviour
                 Renderer render = lights[i].GetComponent<Renderer>();
                 render.material = offMaterial;
             }
+            float textDisplayTime = 0f;
+            {
+                while (textDisplayTime < 5f)
+                {
+                    if (!incorrectbuttonPush.enabled)
+                    {
+                        incorrectbuttonPush.enabled = true;
+                    }
+                    textDisplayTime += Time.deltaTime;
+                }
+            }
         }
+        button1.GetComponent<BoxCollider>().enabled = false;
+        button2.GetComponent<BoxCollider>().enabled = false;
+        button3.GetComponent<BoxCollider>().enabled = false;
+        button4.GetComponent<BoxCollider>().enabled = false;
     }
     public void UnlockedButtonPress() //This is executed when the player has unlocked the puzzle. Once they input the correct code, the door will open and the player is able to escape the room.
     {
