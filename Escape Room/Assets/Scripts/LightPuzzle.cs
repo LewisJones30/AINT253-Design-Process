@@ -12,9 +12,10 @@ public class LightPuzzle : MonoBehaviour
     public Text incorrectbuttonPush;
     public GameObject button1, button2, button3, button4;
     private int currentInputStatus = 0;
+    RaycastPlayer textScript;
     void Start()
     {
-        
+        textScript = GetComponentInChildren<RaycastPlayer>();
     }
 
     // Update is called once per frame
@@ -23,6 +24,86 @@ public class LightPuzzle : MonoBehaviour
     }
     public void notUnlockedButtonPress() //This is launched when the player has not unlocked the puzzle yet to prevent interaction.
 
+    {
+        randomLightsMovement(true);
+        button1.GetComponent<BoxCollider>().enabled = false;
+        button2.GetComponent<BoxCollider>().enabled = false;
+        button3.GetComponent<BoxCollider>().enabled = false;
+        button4.GetComponent<BoxCollider>().enabled = false;
+    }
+    public void UnlockedButtonPress(string buttonPushed) //This is executed when the player has unlocked the puzzle. Once they input the correct code, the door will open and the player is able to escape the room.
+    {
+        //Button solution is... 4, 2, 3, 1, 4
+        //Random light switching but record the order they pressed it in
+        //Five lights on the top will indicate if it has been completed in the right order.
+        //Check status of the five lights on top.
+        if (currentInputStatus == 0)
+        {
+            if (buttonPushed == "Button4")
+            {
+                currentInputStatus = 1;
+                Debug.Log("Correct, 1/5");
+                randomLightsMovement(false);
+            }
+        }
+        else if (currentInputStatus == 1)
+        {
+            if (buttonPushed == "Button2")
+            {
+                currentInputStatus = 2;
+                Debug.Log("Correct, 1/5");
+                randomLightsMovement(false);
+            }
+            else 
+            {
+                currentInputStatus = 0;
+                //Incorrect sound
+                randomLightsMovement(false);
+            }
+        }
+        else if (currentInputStatus == 2)
+        {
+            if (buttonPushed == "Button3")
+            {
+                currentInputStatus = 3;
+                Debug.Log("Correct, 1/5");
+                randomLightsMovement(false);
+            }
+            else
+            {
+                currentInputStatus = 0;
+                //Incorrect sound
+                randomLightsMovement(false);
+            }
+        }
+        else if (currentInputStatus == 3)
+        {
+            if (buttonPushed == "Button1")
+            {
+                currentInputStatus = 4;
+                Debug.Log("Correct, 1/5");
+                randomLightsMovement(false);
+            }
+            else
+            {
+                currentInputStatus = 0;
+                randomLightsMovement(false);
+            }
+        }
+        else if (currentInputStatus == 4)
+        {
+            if (buttonPushed == "Button4")
+            {
+                currentInputStatus = 5;
+                PlayerPrefs.SetInt("lightPuzzleStatus", 2);
+                unlockedLightsMovement();
+                Debug.Log("Unlock COMPLETE!");
+                textScript.StartCoroutine("ButtonPress");
+
+            }
+        }
+    }
+    public void randomLightsMovement(bool showText)
     {
         for (int i = 0; i < lights.Length; i++)
         {
@@ -40,7 +121,7 @@ public class LightPuzzle : MonoBehaviour
             }
             float textDisplayTime = 0f;
             {
-                while (textDisplayTime < 5f)
+                while (textDisplayTime < 5f && showText == true)
                 {
                     if (!incorrectbuttonPush.enabled)
                     {
@@ -50,67 +131,14 @@ public class LightPuzzle : MonoBehaviour
                 }
             }
         }
-        button1.GetComponent<BoxCollider>().enabled = false;
-        button2.GetComponent<BoxCollider>().enabled = false;
-        button3.GetComponent<BoxCollider>().enabled = false;
-        button4.GetComponent<BoxCollider>().enabled = false;
     }
-    public void UnlockedButtonPress(string buttonPushed) //This is executed when the player has unlocked the puzzle. Once they input the correct code, the door will open and the player is able to escape the room.
+    public void unlockedLightsMovement()
     {
-        //Button solution is... 4, 2, 3, 1, 4
-        //Random light switching but record the order they pressed it in
-        //Five lights on the top will indicate if it has been completed in the right order.
-        //Check status of the five lights on top.
-        if (currentInputStatus == 0)
+        for (int i = 0; i < lights.Length; i++)
         {
-            if (buttonPushed == "Button4")
-            {
-                currentInputStatus = 1;
-            }
-        }
-        else if (currentInputStatus == 1)
-        {
-            if (buttonPushed == "Button2")
-            {
-                currentInputStatus = 2;
-            }
-            else 
-            {
-                currentInputStatus = 0;
-                //Incorrect sound
-            }
-        }
-        else if (currentInputStatus == 2)
-        {
-            if (buttonPushed == "Button3")
-            {
-                currentInputStatus = 3;
-            }
-            else
-            {
-                currentInputStatus = 0;
-                //Incorrect sound
-            }
-        }
-        else if (currentInputStatus == 3)
-        {
-            if (buttonPushed == "Button1")
-            {
-                currentInputStatus = 4;
-            }
-            else
-            {
-                currentInputStatus = 0;
-            }
-        }
-        else if (currentInputStatus == 4)
-        {
-            if (buttonPushed == "Button4")
-            {
-                currentInputStatus = 5;
-                PlayerPrefs.SetInt("lightPuzzleStatus", 2);
-
-            }
+            Renderer render = lights[i].GetComponent<Renderer>();
+            render.material = onMaterial;
         }
     }
+
 }

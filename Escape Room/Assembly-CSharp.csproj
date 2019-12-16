@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\buttonPress.cs" />
     <Compile Include="Assets\Scripts\checkCompletion.cs" />
     <Compile Include="Assets\Scripts\gameProgessionScript.cs" />
     <Compile Include="Assets\Scripts\LightPuzzle.cs" />
