@@ -189,6 +189,14 @@ public class RaycastPlayer : MonoBehaviour
                         closeText.enabled = true;
                     }
                 }
+                /*
+                 * Terminal interaction
+                 */
+                else if (hit.collider.gameObject.name == "Computer Terminal V1 - On (Clone)")
+                {
+                    PlayerPrefs.SetInt("lightPuzzleStatus", 1); //Enables the light puzzle to be interacted with.
+                    
+                }
             }
 
 

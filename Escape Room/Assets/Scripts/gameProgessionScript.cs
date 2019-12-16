@@ -8,6 +8,7 @@ public class gameProgessionScript : MonoBehaviour
     // Start is called before the first frame update
     public GameObject hanoiLight;
     public GameObject terminalOn;
+    public GameObject terminal;
     void Start()
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
@@ -20,7 +21,7 @@ public class gameProgessionScript : MonoBehaviour
         Debug.Log(PlayerPrefs.GetInt("puzzle1Complete"));
         Debug.Log(PlayerPrefs.GetInt("lightPuzzleStatus"));
         //Testing
-        PlayerPrefs.SetInt("lightPuzzleStatus", 1);
+        terminalUpdate();
         /*
          * This script is designed for the flow of progression to occur between scenes where required. This script is to be applied to the main camera script.
          * PlayerPrefs guide:
@@ -62,10 +63,13 @@ public class gameProgessionScript : MonoBehaviour
     }
     void terminalUpdate()
     {
-        GameObject terminal = GameObject.Find("Computer Terminal V1 - Off");
-        Debug.Log(terminal.name);
-        Vector3 firstObjectPos = new Vector3(terminal.transform.parent.gameObject.transform.position.x, terminal.transform.parent.gameObject.transform.position.y, terminal.transform.parent.gameObject.transform.position.z);
-        Destroy(terminal.gameObject);
-        Instantiate(terminalOn, firstObjectPos, transform.rotation);
+        Vector3 firstObjectPos = new Vector3(terminal.transform.position.x, terminal.transform.position.y, terminal.transform.position.z);
+        Debug.Log(firstObjectPos);
+        Destroy(terminal);
+        Quaternion rotation;
+        rotation = Quaternion.Euler(0, 180, 0);
+        Instantiate(terminalOn, firstObjectPos, rotation);
+
+
     }
 }
