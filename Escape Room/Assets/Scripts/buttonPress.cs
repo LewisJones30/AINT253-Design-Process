@@ -21,4 +21,10 @@ public class buttonPress : MonoBehaviour
         RaycastPlayer script = raycast.GetComponent<RaycastPlayer>();
         script.closeBookText();
     }
+    public void closeTerminalText()
+    {
+        GameObject raycast = GameObject.Find("raycast");
+        RaycastPlayer script = raycast.GetComponent<RaycastPlayer>();
+        script.closeTerminalText();
+    }
 }

@@ -14,6 +14,8 @@ public class RaycastPlayer : MonoBehaviour
     private LightPuzzle lightpuzzleScript;
     float raycastLimiter = 0.0f;
     public Button close;
+    public Image terminalBackground;
+    public Text terminalText;
     void Start()
     {
         towersInteract.enabled = false;
@@ -22,6 +24,8 @@ public class RaycastPlayer : MonoBehaviour
         bookTextDisplay.enabled = false;
         close.enabled = false;
         closeText.enabled = false;
+        terminalBackground.enabled = false;
+        terminalText.enabled = false;
     }
 
 
@@ -194,7 +198,16 @@ public class RaycastPlayer : MonoBehaviour
                  */
                 else if (hit.collider.gameObject.name == "Computer Terminal V1 - On (Clone)")
                 {
-                    PlayerPrefs.SetInt("lightPuzzleStatus", 1); //Enables the light puzzle to be interacted with.
+                    if (towersInteract.enabled == false)
+                    {
+                        towersInteract.enabled = true;
+                    }
+                    if (Input.GetKey(KeyCode.E))
+                    {
+                        PlayerPrefs.SetInt("lightPuzzleStatus", 1); //Enables the light puzzle to be interacted with.
+                        terminalBackground.enabled = true;
+                        terminalText.enabled = true;
+                    }
                     
                 }
             }
@@ -255,6 +268,18 @@ public class RaycastPlayer : MonoBehaviour
                 PlayerPrefs.SetInt("puzzle1Complete", 0); //Set towers puzzle as openable
             }
 
+        }
+    }
+    public void closeTerminalText()
+    {
+        if (terminalText.enabled == true)
+        {
+            terminalText.enabled = false;
+            terminalBackground.enabled = false;
+            if (PlayerPrefs.GetInt("lightPuzzleStatus") == 0)
+            {
+                PlayerPrefs.SetInt("lightPuzzleStatus", 1);
+            }
         }
     }
 }
