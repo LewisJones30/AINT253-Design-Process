@@ -11,6 +11,7 @@ public class LightPuzzle : MonoBehaviour
     public Material offMaterial;
     public Text incorrectbuttonPush;
     public GameObject button1, button2, button3, button4;
+    private int currentInputStatus = 0;
     void Start()
     {
         
@@ -54,11 +55,62 @@ public class LightPuzzle : MonoBehaviour
         button3.GetComponent<BoxCollider>().enabled = false;
         button4.GetComponent<BoxCollider>().enabled = false;
     }
-    public void UnlockedButtonPress() //This is executed when the player has unlocked the puzzle. Once they input the correct code, the door will open and the player is able to escape the room.
+    public void UnlockedButtonPress(string buttonPushed) //This is executed when the player has unlocked the puzzle. Once they input the correct code, the door will open and the player is able to escape the room.
     {
         //Button solution is... 4, 2, 3, 1, 4
         //Random light switching but record the order they pressed it in
         //Five lights on the top will indicate if it has been completed in the right order.
         //Check status of the five lights on top.
+        if (currentInputStatus == 0)
+        {
+            if (buttonPushed == "Button4")
+            {
+                currentInputStatus = 1;
+            }
+        }
+        else if (currentInputStatus == 1)
+        {
+            if (buttonPushed == "Button2")
+            {
+                currentInputStatus = 2;
+            }
+            else 
+            {
+                currentInputStatus = 0;
+                //Incorrect sound
+            }
+        }
+        else if (currentInputStatus == 2)
+        {
+            if (buttonPushed == "Button3")
+            {
+                currentInputStatus = 3;
+            }
+            else
+            {
+                currentInputStatus = 0;
+                //Incorrect sound
+            }
+        }
+        else if (currentInputStatus == 3)
+        {
+            if (buttonPushed == "Button1")
+            {
+                currentInputStatus = 4;
+            }
+            else
+            {
+                currentInputStatus = 0;
+            }
+        }
+        else if (currentInputStatus == 4)
+        {
+            if (buttonPushed == "Button4")
+            {
+                currentInputStatus = 5;
+                PlayerPrefs.SetInt("lightPuzzleStatus", 2);
+
+            }
+        }
     }
 }
