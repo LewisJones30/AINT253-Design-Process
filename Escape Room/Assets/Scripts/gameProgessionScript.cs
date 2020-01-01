@@ -21,7 +21,7 @@ public class gameProgessionScript : MonoBehaviour
         Debug.Log(PlayerPrefs.GetInt("puzzle1Complete"));
         Debug.Log(PlayerPrefs.GetInt("lightPuzzleStatus"));
         //Testing
-        terminalUpdate();
+        PlayerPrefs.SetInt("puzzle1Complete", 1);
         /*
          * This script is designed for the flow of progression to occur between scenes where required. This script is to be applied to the main camera script.
          * PlayerPrefs guide:

@@ -13,9 +13,14 @@ public class LightPuzzle : MonoBehaviour
     public GameObject button1, button2, button3, button4;
     private int currentInputStatus = 0;
     RaycastPlayer textScript;
+    new AudioSource audio;
+
+    public AudioClip buttonPress, successfulPress;
     void Start()
     {
         textScript = GetComponentInChildren<RaycastPlayer>();
+        audio = GameObject.Find("Buttons for Light Puzzle").GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -30,6 +35,8 @@ public class LightPuzzle : MonoBehaviour
         button2.GetComponent<BoxCollider>().enabled = false;
         button3.GetComponent<BoxCollider>().enabled = false;
         button4.GetComponent<BoxCollider>().enabled = false;
+        audio.clip = successfulPress;
+        audio.Play();
     }
     public void UnlockedButtonPress(string buttonPushed) //This is executed when the player has unlocked the puzzle. Once they input the correct code, the door will open and the player is able to escape the room.
     {
@@ -44,7 +51,17 @@ public class LightPuzzle : MonoBehaviour
                 currentInputStatus = 1;
                 Debug.Log("Correct, 1/5");
                 randomLightsMovement(false);
+                audio.clip = successfulPress;
+                audio.Play();
             }
+            else
+            {
+                currentInputStatus = 0;
+                randomLightsMovement(false);
+                audio.clip = buttonPress;
+                audio.Play();
+            }
+
         }
         else if (currentInputStatus == 1)
         {
@@ -53,12 +70,16 @@ public class LightPuzzle : MonoBehaviour
                 currentInputStatus = 2;
                 Debug.Log("Correct, 1/5");
                 randomLightsMovement(false);
+                audio.clip = successfulPress;
+                audio.Play();
             }
             else 
             {
                 currentInputStatus = 0;
                 //Incorrect sound
                 randomLightsMovement(false);
+                audio.clip = buttonPress;
+                audio.Play();
             }
         }
         else if (currentInputStatus == 2)
@@ -68,12 +89,16 @@ public class LightPuzzle : MonoBehaviour
                 currentInputStatus = 3;
                 Debug.Log("Correct, 1/5");
                 randomLightsMovement(false);
+                audio.clip = successfulPress;
+                audio.Play();
             }
             else
             {
                 currentInputStatus = 0;
                 //Incorrect sound
                 randomLightsMovement(false);
+                audio.clip = buttonPress;
+                audio.Play();
             }
         }
         else if (currentInputStatus == 3)
@@ -83,11 +108,15 @@ public class LightPuzzle : MonoBehaviour
                 currentInputStatus = 4;
                 Debug.Log("Correct, 1/5");
                 randomLightsMovement(false);
+                audio.clip = successfulPress;
+                audio.Play();
             }
             else
             {
                 currentInputStatus = 0;
                 randomLightsMovement(false);
+                audio.clip = buttonPress;
+                audio.Play();
             }
         }
         else if (currentInputStatus == 4)
@@ -97,11 +126,21 @@ public class LightPuzzle : MonoBehaviour
                 currentInputStatus = 5;
                 PlayerPrefs.SetInt("lightPuzzleStatus", 2);
                 unlockedLightsMovement();
+                audio.clip = successfulPress;
+                audio.Play();
                 Debug.Log("Unlock COMPLETE!");
                 textScript.StartCoroutine("ButtonPress");
 
             }
         }
+        else
+        {
+            currentInputStatus = 0;
+            randomLightsMovement(false);
+            audio.clip = buttonPress;
+            audio.Play();
+        }
+
     }
     public void randomLightsMovement(bool showText)
     {

@@ -22,7 +22,7 @@ public class RaycastPlayer : MonoBehaviour
         lightpuzzleScript = this.GetComponentInParent<LightPuzzle>();
         incorrectmessage.enabled = false;
         bookTextDisplay.enabled = false;
-        close.enabled = false;
+        close.gameObject.SetActive(false);
         closeText.enabled = false;
         terminalBackground.enabled = false;
         terminalText.enabled = false;
@@ -33,6 +33,14 @@ public class RaycastPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            if (terminalBackground.enabled == true)
+            {
+                terminalBackground.enabled = false;
+                terminalText.enabled = false;
+            }
+        }
         raycastLimiter += Time.deltaTime;
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Debug.DrawRay(transform.position, forward, Color.red);
@@ -178,6 +186,7 @@ public class RaycastPlayer : MonoBehaviour
                 else if (hit.collider.gameObject.name == "Computer Terminal V1 - On")
                 {
                     //Display text here
+                    towersInteract.text = "Press E to interact with terminal.";
                     PlayerPrefs.SetInt("lightPuzzleStatus", 1); //Enables the light puzzle to be interacted with.
                 }
                 else if (hit.collider.gameObject.name == "Old book V1")
@@ -188,15 +197,16 @@ public class RaycastPlayer : MonoBehaviour
                     }
                     if (Input.GetKey(KeyCode.E))
                     {
-                        bookTextDisplay.enabled = true;
-                        close.enabled = true;
+                        close.gameObject.SetActive(true);
                         closeText.enabled = true;
+                        bookTextDisplay.enabled = true;
+
                     }
                 }
                 /*
                  * Terminal interaction
                  */
-                else if (hit.collider.gameObject.name == "Computer Terminal V1 - On (Clone)")
+                else if (hit.collider.gameObject.name == "Computer Terminal V1 - On(Clone)")
                 {
                     if (towersInteract.enabled == false)
                     {
@@ -207,8 +217,24 @@ public class RaycastPlayer : MonoBehaviour
                         PlayerPrefs.SetInt("lightPuzzleStatus", 1); //Enables the light puzzle to be interacted with.
                         terminalBackground.enabled = true;
                         terminalText.enabled = true;
+                        close.gameObject.SetActive(false);
                     }
                     
+                }
+                else if (hit.collider.gameObject.name == "Door")
+                {
+                    if (towersInteract.enabled == false)
+                    {
+                        towersInteract.enabled = true;
+                        towersInteract.text = "Press E to interact with door.";
+                    }
+                    if (Input.GetKey(KeyCode.E))
+                    {
+                        if (PlayerPrefs.GetInt("lightPuzzleStatus") == 2)
+                        {
+                            SceneManager.LoadScene("MainMenu"); //Update to escape room complete screen.
+                        }
+                    }
                 }
             }
 

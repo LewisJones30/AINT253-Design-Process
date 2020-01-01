@@ -20,11 +20,13 @@ public class buttonPress : MonoBehaviour
         GameObject raycast = GameObject.Find("raycast");
         RaycastPlayer script = raycast.GetComponent<RaycastPlayer>();
         script.closeBookText();
+        if (script.terminalText.enabled == true)
+        {
+            script.closeTerminalText();
+        }
     }
     public void closeTerminalText()
     {
-        GameObject raycast = GameObject.Find("raycast");
-        RaycastPlayer script = raycast.GetComponent<RaycastPlayer>();
-        script.closeTerminalText();
+
     }
 }
