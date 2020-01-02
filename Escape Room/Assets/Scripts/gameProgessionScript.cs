@@ -9,6 +9,7 @@ public class gameProgessionScript : MonoBehaviour
     public GameObject hanoiLight;
     public GameObject terminalOn;
     public GameObject terminal;
+    public AudioSource bootSound;
     void Start()
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
@@ -20,8 +21,7 @@ public class gameProgessionScript : MonoBehaviour
         }
         Debug.Log(PlayerPrefs.GetInt("puzzle1Complete"));
         Debug.Log(PlayerPrefs.GetInt("lightPuzzleStatus"));
-        //Testing
-        PlayerPrefs.SetInt("puzzle1Complete", 1);
+        //Testing;
         /*
          * This script is designed for the flow of progression to occur between scenes where required. This script is to be applied to the main camera script.
          * PlayerPrefs guide:
@@ -32,11 +32,15 @@ public class gameProgessionScript : MonoBehaviour
          */
         if (PlayerPrefs.GetInt("puzzle1Complete") == 1) //If the towers of hanoi puzzle has been completed
         {
+            GameObject camera = GameObject.Find("Main Camera");
             Animator anim = hanoiLight.GetComponent<Animator>();
             anim.SetTrigger("completedPuzzle"); //Trigger the light above the puzzle to be completed
+            Vector3 playerLocation = new Vector3(PlayerPrefs.GetFloat("playerXCoord"), PlayerPrefs.GetFloat("playerYCoord"), PlayerPrefs.GetFloat("playerZCoord"));
+            camera.transform.position = playerLocation;
+            bootSound.Play();
             terminalUpdate();
         }
-        else if (PlayerPrefs.GetInt("puzzle1Complete") == 2)
+        else if (PlayerPrefs.GetInt("puzzle1Complete") == 2) //If the player has "quit" the puzzle. 
         {
             GameObject camera = GameObject.Find("Main Camera");
             Vector3 playerLocation = new Vector3(PlayerPrefs.GetFloat("playerXCoord"), PlayerPrefs.GetFloat("playerYCoord"), PlayerPrefs.GetFloat("playerZCoord"));
@@ -47,7 +51,8 @@ public class gameProgessionScript : MonoBehaviour
         {
             terminalUpdate();
             Debug.Log("Terminal change executed.");
-        }
+        } 
+
     }   
 
     // Update is called once per frame
@@ -71,5 +76,12 @@ public class gameProgessionScript : MonoBehaviour
         Instantiate(terminalOn, firstObjectPos, rotation);
 
 
+    }
+    void gameCompletion()
+    {
+        if (PlayerPrefs.GetInt("lightPuzzleStatus") == 2) //Puzzle completed, player has completed the puzzle.
+        {
+            
+        }
     }
 }

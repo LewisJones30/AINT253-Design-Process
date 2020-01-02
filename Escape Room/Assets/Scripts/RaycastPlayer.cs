@@ -234,6 +234,10 @@ public class RaycastPlayer : MonoBehaviour
                         {
                             SceneManager.LoadScene("MainMenu"); //Update to escape room complete screen.
                         }
+                        else
+                        {
+                            StartCoroutine("doorLocked");
+                        }
                     }
                 }
             }
@@ -279,6 +283,13 @@ public class RaycastPlayer : MonoBehaviour
     {
         incorrectmessage.enabled = true;
         incorrectmessage.text = "The computer terminal is off. I have no use for this.";
+        yield return new WaitForSeconds(5);
+        incorrectmessage.enabled = false;
+    }
+    IEnumerator doorLocked()
+    {
+        incorrectmessage.enabled = true;
+        incorrectmessage.text = "The door is locked.";
         yield return new WaitForSeconds(5);
         incorrectmessage.enabled = false;
     }

@@ -335,8 +335,11 @@ public class ObjectClicker : MonoBehaviour
         emissionColour.SetColor("_EmissionColor", Color.green);
         anim.SetTrigger("completedPuzzle");
         PlayerPrefs.SetInt("puzzle1Complete", 1);
-        yield return new WaitForSeconds(5);
-        SceneManager.LoadScene("GameWinScene");
+        yield return new WaitForSeconds(2.5f);
+        poleText.text = "Returning to main room...";
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene("SampleScene");
+
     }
 }
 
