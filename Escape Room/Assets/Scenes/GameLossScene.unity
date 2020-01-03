@@ -148,7 +148,7 @@ RectTransform:
   m_GameObject: {fileID: 30405723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 25.689, y: 16.278845, z: 1}
+  m_LocalScale: {x: 25.689, y: 14.24285, z: 1}
   m_Children: []
   m_Father: {fileID: 1749639919}
   m_RootOrder: 0
@@ -285,11 +285,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'The security system within the room overtook you.
+  m_Text: 'You failed to escape in time and blacked out.
 
-    You have failed to escape in time and have blacked out.
+    There is no escape after this point.
 
-    Please try again.'
+    Restart and try again.'
 --- !u!222 &236886641
 CanvasRenderer:
   m_ObjectHideFlags: 0

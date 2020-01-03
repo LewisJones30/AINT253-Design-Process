@@ -44,7 +44,7 @@ public class Timer : MonoBehaviour
                     if (timeLeft < 30)
                     {
                         GameOverText.enabled = true;
-                        GameOverText.text = "Is this the end?";
+                        GameOverText.text = "Is this the end? I don't feel right..";
                         if (seconds % 2 == 0)
                         {
                             timeLeftText.color = Color.white;

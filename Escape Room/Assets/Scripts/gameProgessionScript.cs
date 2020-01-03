@@ -25,7 +25,6 @@ public class gameProgessionScript : MonoBehaviour
         }
         Debug.Log(PlayerPrefs.GetInt("puzzle1Complete"));
         Debug.Log(PlayerPrefs.GetInt("lightPuzzleStatus"));
-        //testing
         /*
          * This script is designed for the flow of progression to occur between scenes where required. This script is to be applied to the main camera script.
          * PlayerPrefs guide:
@@ -90,7 +89,7 @@ public class gameProgessionScript : MonoBehaviour
     IEnumerator terminalMessage()
     {
         topText.enabled = true;
-        topText.text = "I hear something in the background as the puzzle completes...";
+        topText.text = "I hear a noise...";
         yield return new WaitForSeconds(5);
         topText.enabled = false;
 

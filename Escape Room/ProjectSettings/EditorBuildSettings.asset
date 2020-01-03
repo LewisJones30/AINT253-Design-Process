@@ -14,7 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/towersOfHanoiPuzScene.unity
     guid: 354d6ba0de8e52b468f89edd7f8be47b
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/GameLossScene.unity
+    guid: 6b4ceab2829bd9042917f140cd4e62b1
   - enabled: 1
     path: Assets/Scenes/GameWinScene.unity
-    guid: b5ef85ec54d2a414cb8a7e17ecc21916
+    guid: 6438fc5023a41af4d8d148f41f6cf9cc
   m_configObjects: {}
