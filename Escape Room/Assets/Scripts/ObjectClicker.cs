@@ -14,6 +14,9 @@ public class ObjectClicker : MonoBehaviour
         pole;
     public Material emissionColour;
     Animator anim;
+    public Timer timeScript;
+    public AudioSource audio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,16 +41,17 @@ public class ObjectClicker : MonoBehaviour
                 }
                 if (hit.transform != null)
                 {
-                    print(hit.transform.gameObject);
+                    audio.Play();
                     if (firstGameHit == null)
                     {
                         firstGameHit = hit.transform.gameObject;
-                        poleText.text = firstGameHit.name + " is selected. Choose a second pole.";
+                        poleText.text = "1st Pole selected.";
                     }
                     else
                     {
                         secondGameHit = hit.transform.gameObject;
-                        poleText.text = "Choose a pole.";
+                        Debug.Log(secondGameHit.name + "second choice");
+                        poleText.text = "Swapped. Choose a pole.";
                         //Check code here
                         if (firstGameHit.name == "4ring" && secondGameHit.name == "0ring")
                         {
@@ -56,7 +60,7 @@ public class ObjectClicker : MonoBehaviour
                             //Instantiate(oneringtop, secondObjectPos, transform.rotation);;
 
                         }
-                        else if (firstGameHit.name == "3ringSecThiFou" && secondGameHit.name != "1ring")
+                        else if (firstGameHit.name == "3ringSecThiFou" && secondGameHit.name != "1ring" && secondGameHit.name != "3ringSecThiFou")
                         {
                             //tworingsthirdfourth, oneringsecond
                             swapObjects(tworingsthirdfourth, oneringsecond);
@@ -252,6 +256,8 @@ public class ObjectClicker : MonoBehaviour
                         }
                         else if (firstGameHit.name == "1ringSec" && secondGameHit.name == "1ringFou")
                         {
+                            swapObjects(pole, tworingssecondfourth);
+                            checkPuzzle();
                             //pole, tworingssecondfourth
                         }
                         else if (firstGameHit.name == "2ringTopSec" && secondGameHit.name == "1ringThi")
@@ -280,6 +286,31 @@ public class ObjectClicker : MonoBehaviour
                         else if (firstGameHit.name == "2ringTopSec" && secondGameHit.name == "1ringFou")
                         {
                             swapObjects(oneringsecond, tworingstopfourth);
+                            checkPuzzle();
+                        }
+                        else if (firstGameHit.name == "1ringTop" && secondGameHit.name == "2ringThiFou")
+                        {
+                            swapObjects(pole, threeringstopthirdfourth);
+                            checkPuzzle();
+                        }
+                        else if (firstGameHit.name == "3ringTopThiFou" && secondGameHit.name == "0ring")
+                        {
+                            swapObjects(tworingsthirdfourth, oneringtop);
+                            checkPuzzle();
+                        }
+                        else if (firstGameHit.name == "3ringTopThiFou" && secondGameHit.name == "1ringSec")
+                        {
+                            swapObjects(tworingsthirdfourth, tworingstopsecond);
+                            checkPuzzle();
+                        }
+                        else if (firstGameHit.name == "3ringTopSecFou" && secondGameHit.name == "1ringThi")
+                        {
+                            swapObjects(tworingssecondfourth, tworingstopthird);
+                            checkPuzzle();
+                        }
+                        else if (firstGameHit.name == "1ringSec" && secondGameHit.name == "0ring")
+                        {
+                            swapObjects(pole, oneringsecond);
                             checkPuzzle();
                         }
                         else
@@ -334,6 +365,7 @@ public class ObjectClicker : MonoBehaviour
         Debug.Log("Puzzle complete!");
         emissionColour.SetColor("_EmissionColor", Color.green);
         anim.SetTrigger("completedPuzzle");
+        PlayerPrefs.SetFloat("timeRemaining", timeScript.getTimeRemaining());
         PlayerPrefs.SetInt("puzzle1Complete", 1);
         yield return new WaitForSeconds(2.5f);
         poleText.text = "Returning to main room...";

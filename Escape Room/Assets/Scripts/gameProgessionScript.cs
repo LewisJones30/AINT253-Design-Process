@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class gameProgessionScript : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class gameProgessionScript : MonoBehaviour
     public GameObject terminalOn;
     public GameObject terminal;
     public AudioSource bootSound;
+    public Light light;
+    public Text topText;
+    public Timer timer;
     void Start()
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
@@ -21,7 +25,7 @@ public class gameProgessionScript : MonoBehaviour
         }
         Debug.Log(PlayerPrefs.GetInt("puzzle1Complete"));
         Debug.Log(PlayerPrefs.GetInt("lightPuzzleStatus"));
-        //Testing;
+        //testing
         /*
          * This script is designed for the flow of progression to occur between scenes where required. This script is to be applied to the main camera script.
          * PlayerPrefs guide:
@@ -33,12 +37,17 @@ public class gameProgessionScript : MonoBehaviour
         if (PlayerPrefs.GetInt("puzzle1Complete") == 1) //If the towers of hanoi puzzle has been completed
         {
             GameObject camera = GameObject.Find("Main Camera");
+            light.color = Color.green;
+            light.intensity = 0.25f;
             Animator anim = hanoiLight.GetComponent<Animator>();
             anim.SetTrigger("completedPuzzle"); //Trigger the light above the puzzle to be completed
             Vector3 playerLocation = new Vector3(PlayerPrefs.GetFloat("playerXCoord"), PlayerPrefs.GetFloat("playerYCoord"), PlayerPrefs.GetFloat("playerZCoord"));
             camera.transform.position = playerLocation;
             bootSound.Play();
             terminalUpdate();
+            timer.setTimeRemaining(PlayerPrefs.GetFloat("timeRemaining"));
+            StartCoroutine("terminalMessage");
+
         }
         else if (PlayerPrefs.GetInt("puzzle1Complete") == 2) //If the player has "quit" the puzzle. 
         {
@@ -51,6 +60,7 @@ public class gameProgessionScript : MonoBehaviour
         {
             terminalUpdate();
             Debug.Log("Terminal change executed.");
+
         } 
 
     }   
@@ -75,6 +85,14 @@ public class gameProgessionScript : MonoBehaviour
         rotation = Quaternion.Euler(0, 180, 0);
         Instantiate(terminalOn, firstObjectPos, rotation);
 
+
+    }
+    IEnumerator terminalMessage()
+    {
+        topText.enabled = true;
+        topText.text = "I hear something in the background as the puzzle completes...";
+        yield return new WaitForSeconds(5);
+        topText.enabled = false;
 
     }
     void gameCompletion()

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneNav : MonoBehaviour
 {
+    public Timer timeRemainingScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +29,9 @@ public class SceneNav : MonoBehaviour
         PlayerPrefs.SetInt("puzzle1Complete", 2);
         SceneManager.LoadScene("SampleScene");
 
+    }
+    public void finishGame()
+    {
+        SceneManager.LoadScene("GameWinScene");
     }
 }

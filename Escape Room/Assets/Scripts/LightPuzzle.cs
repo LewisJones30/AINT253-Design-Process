@@ -14,6 +14,7 @@ public class LightPuzzle : MonoBehaviour
     private int currentInputStatus = 0;
     RaycastPlayer textScript;
     new AudioSource audio;
+    //public Animation btnpush, btnpush2, btnpush3, btnpush4;
 
     public AudioClip buttonPress, successfulPress;
     void Start()
@@ -51,6 +52,11 @@ public class LightPuzzle : MonoBehaviour
                 currentInputStatus = 1;
                 Debug.Log("Correct, 1/5");
                 randomLightsMovement(false);
+                // btnpush4.wrapMode = WrapMode.Once;
+                button4.GetComponent<Animator>().Play("btnPush4", -1, 0f);
+                //btnpush4.Play();
+
+
                 audio.clip = successfulPress;
                 audio.Play();
             }
@@ -58,6 +64,10 @@ public class LightPuzzle : MonoBehaviour
             {
                 currentInputStatus = 0;
                 randomLightsMovement(false);
+                //btnpush4.wrapMode = WrapMode.Once;
+                //btnpush4.Play();
+                GameObject btnPushAnim = GameObject.Find(buttonPushed);
+                buttonPushAnim(btnPushAnim);
                 audio.clip = buttonPress;
                 audio.Play();
             }
@@ -70,6 +80,9 @@ public class LightPuzzle : MonoBehaviour
                 currentInputStatus = 2;
                 Debug.Log("Correct, 1/5");
                 randomLightsMovement(false);
+                GameObject btnPushAnim = GameObject.Find(buttonPushed);
+                buttonPushAnim(btnPushAnim);
+
                 audio.clip = successfulPress;
                 audio.Play();
             }
@@ -78,6 +91,8 @@ public class LightPuzzle : MonoBehaviour
                 currentInputStatus = 0;
                 //Incorrect sound
                 randomLightsMovement(false);
+                GameObject btnPushAnim = GameObject.Find(buttonPushed);
+                buttonPushAnim(btnPushAnim);
                 audio.clip = buttonPress;
                 audio.Play();
             }
@@ -90,6 +105,8 @@ public class LightPuzzle : MonoBehaviour
                 Debug.Log("Correct, 1/5");
                 randomLightsMovement(false);
                 audio.clip = successfulPress;
+                GameObject btnPushAnim = GameObject.Find(buttonPushed);
+                buttonPushAnim(btnPushAnim);
                 audio.Play();
             }
             else
@@ -98,6 +115,8 @@ public class LightPuzzle : MonoBehaviour
                 //Incorrect sound
                 randomLightsMovement(false);
                 audio.clip = buttonPress;
+                GameObject btnPushAnim = GameObject.Find(buttonPushed);
+                buttonPushAnim(btnPushAnim);
                 audio.Play();
             }
         }
@@ -109,6 +128,8 @@ public class LightPuzzle : MonoBehaviour
                 Debug.Log("Correct, 1/5");
                 randomLightsMovement(false);
                 audio.clip = successfulPress;
+                GameObject btnPushAnim = GameObject.Find(buttonPushed);
+                buttonPushAnim(btnPushAnim);
                 audio.Play();
             }
             else
@@ -116,6 +137,8 @@ public class LightPuzzle : MonoBehaviour
                 currentInputStatus = 0;
                 randomLightsMovement(false);
                 audio.clip = buttonPress;
+                GameObject btnPushAnim = GameObject.Find(buttonPushed);
+                buttonPushAnim(btnPushAnim);
                 audio.Play();
             }
         }
@@ -127,6 +150,8 @@ public class LightPuzzle : MonoBehaviour
                 PlayerPrefs.SetInt("lightPuzzleStatus", 2);
                 unlockedLightsMovement();
                 audio.clip = successfulPress;
+                GameObject btnPushAnim = GameObject.Find(buttonPushed);
+                buttonPushAnim(btnPushAnim);
                 audio.Play();
                 Debug.Log("Unlock COMPLETE!");
                 textScript.StartCoroutine("ButtonPress");
@@ -138,6 +163,8 @@ public class LightPuzzle : MonoBehaviour
             currentInputStatus = 0;
             randomLightsMovement(false);
             audio.clip = buttonPress;
+            GameObject btnPushAnim = GameObject.Find(buttonPushed);
+            buttonPushAnim(btnPushAnim);
             audio.Play();
         }
 
@@ -177,6 +204,25 @@ public class LightPuzzle : MonoBehaviour
         {
             Renderer render = lights[i].GetComponent<Renderer>();
             render.material = onMaterial;
+        }
+    }
+    public void buttonPushAnim(GameObject obj)
+    {
+        if (obj.name == ("Button1"))
+        {
+            button1.GetComponent<Animator>().Play("btnPush1", -1, 0f);
+        }
+        else if (obj.name == "Button2")
+        {
+            button2.GetComponent<Animator>().Play("btnPush2", -1, 0f);
+        }
+        else if (obj.name == "Button3")
+        {
+            button3.GetComponent<Animator>().Play("buttonPush", -1, 0f);
+        }
+        else if (obj.name == "Button4")
+        {
+            button4.GetComponent<Animator>().Play("btnPush4", -1, 0f);
         }
     }
 

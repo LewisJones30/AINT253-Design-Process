@@ -249,7 +249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1044, y: 335}
+  m_AnchoredPosition: {x: -933, y: 438}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236886640
@@ -274,7 +274,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: a79eda484c4509446bbf0b17a8d5a624, type: 3}
-    m_FontSize: 45
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -285,16 +285,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Please note:\n\nThe timer is just running in the background - if the time
-    runs out nothing will happen.\nThe Towers of Hanoi puzzle should be working correctly
-    now.\nThis is simply to get feedback on the lighting and general flow of the game.
-    There is \ncurrently one puzzle. Please go to the desk in the end of the room
-    to initiate the puzzle.\nThe movement is still a bit buggy so please bear with
-    it.\n\nRules of the Towers of Hanoi puzzle:\n1. You can only move one disc at
-    a time, and it is only the disc on the top of the stack.\n2. You cannot move a
-    larger disc on top of a smaller disc.\nThe objective is to get the four discs
-    on the left to the right-most disc.\nWASD to move, arrow keys to rotate camera.\n\nIf
-    you wish to reset the demo, there is a main menu button on the main room navigation.\n"
+  m_Text: "You have been locked within a mysterious room \nwhile searching an abandoned
+    building. \nIt appears that there is still power \nwithin this room but yet no
+    one has been here for years. \nYour mission is to escape before the \nroom's security
+    system kills you slowly.\nCan you escape before it's too late?\nInstructions:\nUse
+    your mouse to rotate the camera.\nUse WASD to walk.\nWhen you are near objects,
+    press E to interact with it.\n "
 --- !u!222 &236886641
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -373,7 +369,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Start Game
+  m_Text: Click to Start
 --- !u!222 &351092983
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -382,6 +378,133 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351092980}
   m_CullTransparentMesh: 0
+--- !u!1 &493498746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 493498748}
+  - component: {fileID: 493498747}
+  m_Layer: 0
+  m_Name: Background Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &493498747
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493498746}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c890e00b6a5db804090e052e98181e8e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &493498748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493498746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9720573, y: 2.3568387, z: 33.637283}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &571845925
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,6 +717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60eb7d906d2d67046bed84d0966dca13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeRemainingScript: {fileID: 0}
 --- !u!1 &1053507243
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +843,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -565, y: 573}
+  m_AnchoredPosition: {x: -420, y: 600}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504887353
@@ -755,7 +879,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Escape Room Demo
+  m_Text: Escape Room
 --- !u!222 &1504887354
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -963,3 +1087,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hanoiLight: {fileID: 0}
+  terminalOn: {fileID: 0}
+  terminal: {fileID: 0}
+  bootSound: {fileID: 0}
+  light: {fileID: 0}
+  topText: {fileID: 0}
+  timer: {fileID: 0}

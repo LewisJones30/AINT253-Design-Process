@@ -16,6 +16,8 @@ public class RaycastPlayer : MonoBehaviour
     public Button close;
     public Image terminalBackground;
     public Text terminalText;
+    public Canvas canvas;
+    CanvasGroup group;
     void Start()
     {
         towersInteract.enabled = false;
@@ -26,6 +28,7 @@ public class RaycastPlayer : MonoBehaviour
         closeText.enabled = false;
         terminalBackground.enabled = false;
         terminalText.enabled = false;
+        group = canvas.GetComponent<CanvasGroup>();
     }
 
 
@@ -70,13 +73,14 @@ public class RaycastPlayer : MonoBehaviour
                         }
                         else
                         {
-                            //Transfer player to the towers of hanoi puzzle scene - don't forget to pass puzzle variables if not done already!
-                            //To do: Save current location of player to this, call back when the player leaves the puzzle
-                            PlayerPrefs.SetFloat("playerXCoord", transform.position.x); //Currently unused
+                            //Transfer player to the towers of hanoi puzzle scene
+
+                            //Save the player's original location, to be called upon when they leave the puzzle.      
+                            PlayerPrefs.SetFloat("playerXCoord", transform.position.x); 
                             Debug.Log(transform.position.x);
-                            PlayerPrefs.SetFloat("playerYCoord", transform.position.y); //Currently unused
+                            PlayerPrefs.SetFloat("playerYCoord", transform.position.y); 
                             Debug.Log(transform.position.y);
-                            PlayerPrefs.SetFloat("playerZCoord", transform.position.z); //Currently unused
+                            PlayerPrefs.SetFloat("playerZCoord", transform.position.z); 
                             Debug.Log(transform.position.z);
                             PlayerPrefs.SetFloat("timeRemaining", timeRemainingScript.getTimeRemaining()); //Set time remaining
                             timeRemainingScript.freezeTime();
@@ -232,7 +236,7 @@ public class RaycastPlayer : MonoBehaviour
                     {
                         if (PlayerPrefs.GetInt("lightPuzzleStatus") == 2)
                         {
-                            SceneManager.LoadScene("MainMenu"); //Update to escape room complete screen.
+                            StartCoroutine("Fade");
                         }
                         else
                         {
@@ -292,6 +296,16 @@ public class RaycastPlayer : MonoBehaviour
         incorrectmessage.text = "The door is locked.";
         yield return new WaitForSeconds(5);
         incorrectmessage.enabled = false;
+    }
+    IEnumerator Fade()
+    {
+        while (group.alpha < 1)
+        {
+            group.alpha += Time.deltaTime / 2;
+            yield return null;
+        }
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("GameWinScene");
     }
     public void closeBookText()
     {

@@ -11,11 +11,17 @@ public class Timer : MonoBehaviour
     public float timeLeft = 60.0f;
     public Text timeLeftText;
     public bool timeTicking = true;
+    CanvasGroup group;
+    public Canvas canvas;
+    public Text GameOverText;
 
     // Start is called before the first frame update
     void Start()
     {
+        group = canvas.GetComponent<CanvasGroup>();
         timeLeftText.color = Color.green;
+        group.alpha = 0;
+        GameOverText.enabled = false;
     }
 
     // Update is called once per frame
@@ -37,6 +43,8 @@ public class Timer : MonoBehaviour
                     timeLeftText.color = Color.red;
                     if (timeLeft < 30)
                     {
+                        GameOverText.enabled = true;
+                        GameOverText.text = "Is this the end?";
                         if (seconds % 2 == 0)
                         {
                             timeLeftText.color = Color.white;
@@ -47,7 +55,16 @@ public class Timer : MonoBehaviour
             if (timeLeft < 0)
             {
                 //Code when time ends to start explosion and player fainting sequence.
-                //SceneManager.LoadScene("GameLoseScene");
+                freezeTime();
+                GameOverText.enabled = true;
+
+                GameOverText.text = "The world around me suddenly turns black...";
+                timeLeftText.text =string.Format("{0:00}:{1:00}", 0, 0); 
+
+                StartCoroutine("Fade");
+                
+
+
             }
         }
         else
@@ -73,4 +90,15 @@ public class Timer : MonoBehaviour
     {
         timeTicking = true;
     }
+    IEnumerator Fade()
+    {
+        while (group.alpha < 1)
+        {
+            group.alpha += Time.deltaTime / 2;
+            yield return  null;
+        }
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("MainMenu");
+    }
 }
+
