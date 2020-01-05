@@ -21,7 +21,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -956,5 +955,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/towersOfHanoiPuzScene.unity
   - Assets/Scenes/GameLossScene.unity
   - Assets/Scenes/GameWinScene.unity
-  playerPath: C:/Users/Lewis/Documents/GitHub/AINT253-Design-Process/Final Build/Escape
+  playerPath: C:/Users/Lewis/Documents/GitHub/AINT253-Design-Process/Blackout Build/Escape
     Room.exe

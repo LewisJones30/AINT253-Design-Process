@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60eb7d906d2d67046bed84d0966dca13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemainingScript: {fileID: 0}
+  timeRemaining: {fileID: 392884063}
 --- !u!1 &326682024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2902,7 +2902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60eb7d906d2d67046bed84d0966dca13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemainingScript: {fileID: 0}
+  timeRemaining: {fileID: 392884063}
 --- !u!114 &2119323209
 MonoBehaviour:
   m_ObjectHideFlags: 0

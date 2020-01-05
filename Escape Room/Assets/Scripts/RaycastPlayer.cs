@@ -286,7 +286,7 @@ public class RaycastPlayer : MonoBehaviour
     IEnumerator earlyComputer()
     {
         incorrectmessage.enabled = true;
-        incorrectmessage.text = "The computer terminal is off. I have no use for this.";
+        incorrectmessage.text = "The computer terminal is off.";
         yield return new WaitForSeconds(5);
         incorrectmessage.enabled = false;
     }

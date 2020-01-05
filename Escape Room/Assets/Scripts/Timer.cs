@@ -98,7 +98,7 @@ public class Timer : MonoBehaviour
             yield return  null;
         }
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("GameLossScene");
     }
 }
 
