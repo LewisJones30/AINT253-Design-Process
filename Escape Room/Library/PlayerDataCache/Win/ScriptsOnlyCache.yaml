@@ -21,6 +21,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -434,7 +435,7 @@ ScriptsOnlyBuild:
     className: HandRig
   - hash:
       serializedVersion: 2
-      Hash: e29fa2394a551c47aaf21a0cffa3b1f7
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SceneNav
@@ -638,7 +639,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 9b6012a8c2a2e4ec609bd0433c4b1b05
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: moveCamera
@@ -955,5 +956,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/towersOfHanoiPuzScene.unity
   - Assets/Scenes/GameLossScene.unity
   - Assets/Scenes/GameWinScene.unity
-  playerPath: C:/Users/Lewis/Documents/GitHub/AINT253-Design-Process/Blackout Build/Escape
+  playerPath: C:/Users/Lewis/Documents/GitHub/AINT253-Design-Process/Version 1.0.1/Escape
     Room.exe

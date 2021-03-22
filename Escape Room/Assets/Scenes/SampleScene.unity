@@ -4734,6 +4734,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d367659b003d74998f2beb6349234e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  sensitivityX: 3
+  sensitivityY: 3
 --- !u!64 &963194233
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7795,7 +7798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60eb7d906d2d67046bed84d0966dca13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: {fileID: 498127519}
 --- !u!114 &1900855695
 MonoBehaviour:
   m_ObjectHideFlags: 0
