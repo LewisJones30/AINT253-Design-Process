@@ -10,9 +10,9 @@ public class towersScene : MonoBehaviour
     {
         float timeRemaining = PlayerPrefs.GetFloat("timeRemaining");
         Debug.Log("Towers scene time remaining: " + timeRemaining);
-        timeScript.freezeTime();
-        timeScript.setTimeRemaining(timeRemaining);
-        timeScript.resumeTime();
+        timeScript.FreezeTime();
+        timeScript.SetTimeRemaining(timeRemaining);
+        timeScript.ResumeTime();
         //Initialise variables here
     }
 

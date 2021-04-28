@@ -1,19 +1,29 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class gameProgessionScript : MonoBehaviour
+public class GameProgessionScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject hanoiLight;
-    public GameObject terminalOn;
-    public GameObject terminal;
-    public AudioSource bootSound;
-    public Light light;
-    public Text topText;
-    public Timer timer;
+    //Public Variables
+
+    //SerializeField variables
+    [SerializeField]
+    GameObject hanoiLight;
+    [SerializeField]
+    GameObject terminalOn;
+    [SerializeField]
+    GameObject terminal;
+    [SerializeField]
+    AudioSource bootSound;
+    [SerializeField]
+    Light light;
+    [SerializeField]
+    Text topText;
+    [SerializeField]
+    Timer timer;
+    //Private variables
+
     void Start()
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
@@ -35,7 +45,7 @@ public class gameProgessionScript : MonoBehaviour
          */
         if (PlayerPrefs.GetInt("puzzle1Complete") == 1) //If the towers of hanoi puzzle has been completed
         {
-            GameObject camera = GameObject.Find("Main Camera");
+            GameObject camera = GameObject.FindWithTag("MainCamera");
             light.color = Color.green;
             light.intensity = 0.25f;
             Animator anim = hanoiLight.GetComponent<Animator>();
@@ -43,39 +53,27 @@ public class gameProgessionScript : MonoBehaviour
             Vector3 playerLocation = new Vector3(PlayerPrefs.GetFloat("playerXCoord"), PlayerPrefs.GetFloat("playerYCoord"), PlayerPrefs.GetFloat("playerZCoord"));
             camera.transform.position = playerLocation;
             bootSound.Play();
-            terminalUpdate();
-            timer.setTimeRemaining(PlayerPrefs.GetFloat("timeRemaining"));
-            StartCoroutine("terminalMessage");
+            TerminalUpdate();
+            timer.SetTimeRemaining(PlayerPrefs.GetFloat("timeRemaining"));
+            StartCoroutine("TerminalMessage");
 
         }
         else if (PlayerPrefs.GetInt("puzzle1Complete") == 2) //If the player has "quit" the puzzle. 
         {
-            GameObject camera = GameObject.Find("Main Camera");
+            GameObject camera = GameObject.FindWithTag("MainCamera");
             Vector3 playerLocation = new Vector3(PlayerPrefs.GetFloat("playerXCoord"), PlayerPrefs.GetFloat("playerYCoord"), PlayerPrefs.GetFloat("playerZCoord"));
             Debug.Log(playerLocation);
             camera.transform.position = playerLocation;
         }
         else if (PlayerPrefs.GetInt("lightPuzzleStatus") == 1)
         {
-            terminalUpdate();
+            TerminalUpdate();
             Debug.Log("Terminal change executed.");
 
         } 
 
     }   
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    void newGameCode() //This can be called at the start of each game to reset the entire escape room. All of the player prefs will be entirely reset here.
-    {
-        PlayerPrefs.SetInt("puzzle1Complete", 0); 
-
-    }
-    void terminalUpdate()
+    void TerminalUpdate()
     {
         Vector3 firstObjectPos = new Vector3(terminal.transform.position.x, terminal.transform.position.y, terminal.transform.position.z);
         Debug.Log(firstObjectPos);
@@ -86,19 +84,12 @@ public class gameProgessionScript : MonoBehaviour
 
 
     }
-    IEnumerator terminalMessage()
+    IEnumerator TerminalMessage()
     {
         topText.enabled = true;
         topText.text = "I hear a noise...";
         yield return new WaitForSeconds(5);
         topText.enabled = false;
 
-    }
-    void gameCompletion()
-    {
-        if (PlayerPrefs.GetInt("lightPuzzleStatus") == 2) //Puzzle completed, player has completed the puzzle.
-        {
-            
-        }
     }
 }

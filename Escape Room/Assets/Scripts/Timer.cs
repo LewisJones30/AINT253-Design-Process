@@ -8,12 +8,22 @@ using UnityEngine.SceneManagement;
  */
 public class Timer : MonoBehaviour
 {
-    public float timeLeft = 60.0f;
-    public Text timeLeftText;
-    public bool timeTicking = true;
+
+    //Public variables
+
+    //SerializeField variables
+    [SerializeField]
+    float timeLeft = 60.0f;
+    [SerializeField]
+    Text timeLeftText;
+    [SerializeField]
+    bool timeTicking = true;
+    [SerializeField]
+    Canvas canvas;
+    [SerializeField]
+    Text GameOverText;
+    //Private variables
     CanvasGroup group;
-    public Canvas canvas;
-    public Text GameOverText;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +65,7 @@ public class Timer : MonoBehaviour
             if (timeLeft < 0)
             {
                 //Code when time ends to start explosion and player fainting sequence.
-                freezeTime();
+                FreezeTime();
                 GameOverText.enabled = true;
 
                 GameOverText.text = "The world around me suddenly turns black...";
@@ -74,19 +84,19 @@ public class Timer : MonoBehaviour
 
 
     }
-    public float getTimeRemaining()
+    public float GetTimeRemaining()
     {
         return timeLeft;
     }
-    public void setTimeRemaining(float time)
+    public void SetTimeRemaining(float time)
     {
         timeLeft = time; 
     }
-    public void freezeTime()
+    public void FreezeTime()
     {
         timeTicking = false;
     }
-    public void resumeTime()
+    public void ResumeTime()
     {
         timeTicking = true;
     }

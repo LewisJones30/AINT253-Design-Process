@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class buttonPress : MonoBehaviour
+public class ButtonPress : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,17 +15,17 @@ public class buttonPress : MonoBehaviour
     {
         
     }
-    public void closeBookText()
+    public void CloseBookText()
     {
-        GameObject raycast = GameObject.Find("raycast");
+        GameObject raycast = GameObject.FindWithTag("Raycast");
         RaycastPlayer script = raycast.GetComponent<RaycastPlayer>();
-        script.closeBookText();
-        if (script.terminalText.enabled == true)
+        script.CloseBookText();
+        if (script.GetTerminalEnabled())
         {
-            script.closeTerminalText();
+            script.CloseTerminalText();
         }
     }
-    public void closeTerminalText()
+    public void CloseTerminalText()
     {
 
     }

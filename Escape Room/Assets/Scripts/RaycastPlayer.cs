@@ -6,22 +6,35 @@ using UnityEngine.SceneManagement;
 
 public class RaycastPlayer : MonoBehaviour
 {
-    RaycastHit hit;
-    Ray raycast;
-    public Text towersInteract, incorrectmessage, bookTextDisplay, closeText;
-    public int raycastLength;
-    public Timer timeRemainingScript;
+
+    //Public variables
+    //SerializeField variables
+    [SerializeField]
+    Text towersInteract, incorrectmessage, bookTextDisplay, closeText;
+    [SerializeField]
+    int raycastLength;
+    [SerializeField]
+    Timer timeRemainingScript;
+    [SerializeField]
+    Button close;
+    [SerializeField]
+    Image terminalBackground;
+    [SerializeField]
+    Text terminalText;
+    [SerializeField]
+    Canvas canvas;
+    //Private variables
     private LightPuzzle lightpuzzleScript;
     float raycastLimiter = 0.0f;
-    public Button close;
-    public Image terminalBackground;
-    public Text terminalText;
-    public Canvas canvas;
+    RaycastHit hit;
+    Ray raycast;
     CanvasGroup group;
+
+
     void Start()
     {
         towersInteract.enabled = false;
-        lightpuzzleScript = this.GetComponentInParent<LightPuzzle>();
+        lightpuzzleScript = GetComponentInParent<LightPuzzle>();
         incorrectmessage.enabled = false;
         bookTextDisplay.enabled = false;
         close.gameObject.SetActive(false);
@@ -38,7 +51,7 @@ public class RaycastPlayer : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            if (terminalBackground.enabled == true)
+            if (terminalBackground.enabled)
             {
                 terminalBackground.enabled = false;
                 terminalText.enabled = false;
@@ -67,7 +80,7 @@ public class RaycastPlayer : MonoBehaviour
                     {
                         if (PlayerPrefs.GetInt("puzzle1Complete") == 3)
                         {
-                            StartCoroutine("interactTowersEarly");
+                            StartCoroutine("InteractTowersEarly");
                             Debug.Log("Message");
                             return;
                         }
@@ -82,9 +95,9 @@ public class RaycastPlayer : MonoBehaviour
                             Debug.Log(transform.position.y);
                             PlayerPrefs.SetFloat("playerZCoord", transform.position.z); 
                             Debug.Log(transform.position.z);
-                            PlayerPrefs.SetFloat("timeRemaining", timeRemainingScript.getTimeRemaining()); //Set time remaining
-                            timeRemainingScript.freezeTime();
-                            Debug.Log(timeRemainingScript.getTimeRemaining());
+                            PlayerPrefs.SetFloat("timeRemaining", timeRemainingScript.GetTimeRemaining()); //Set time remaining
+                            timeRemainingScript.FreezeTime();
+                            Debug.Log(timeRemainingScript.GetTimeRemaining());
                             SceneManager.LoadScene("towersOfHanoiPuzScene");
                             Debug.Log("E pressed!");
                         }
@@ -106,7 +119,7 @@ public class RaycastPlayer : MonoBehaviour
                         if (PlayerPrefs.GetInt("lightPuzzleStatus") == 0)
                         {
                             Debug.Log("Status = 0");
-                            StartCoroutine("incorrectButtonPress");
+                            StartCoroutine("IncorrectButtonPress");
 
                         }
                         else if (PlayerPrefs.GetInt("lightPuzzleStatus") == 1)
@@ -128,7 +141,7 @@ public class RaycastPlayer : MonoBehaviour
                     {
                         if (PlayerPrefs.GetInt("lightPuzzleStatus") == 0)
                         {
-                            StartCoroutine("incorrectButtonPress");
+                            StartCoroutine("IncorrectButtonPress");
                         }
                         else if (PlayerPrefs.GetInt("lightPuzzleStatus") == 1)
                         {
@@ -148,7 +161,7 @@ public class RaycastPlayer : MonoBehaviour
                     {
                         if (PlayerPrefs.GetInt("lightPuzzleStatus") == 0)
                         {
-                            StartCoroutine("incorrectButtonPress");
+                            StartCoroutine("IncorrectButtonPress");
 
                         }
                         else if (PlayerPrefs.GetInt("lightPuzzleStatus") == 1)
@@ -184,7 +197,7 @@ public class RaycastPlayer : MonoBehaviour
                  */
                 else if (hit.collider.gameObject.name == "Computer Terminal V1 - Off")
                 {
-                    StartCoroutine("earlyComputer");
+                    StartCoroutine("EarlyComputer");
                     return;
                 }
                 else if (hit.collider.gameObject.name == "Computer Terminal V1 - On")
@@ -240,7 +253,7 @@ public class RaycastPlayer : MonoBehaviour
                         }
                         else
                         {
-                            StartCoroutine("doorLocked");
+                            StartCoroutine("DoorLocked");
                         }
                     }
                 }
@@ -257,7 +270,18 @@ public class RaycastPlayer : MonoBehaviour
         }
 
     }
-    IEnumerator incorrectButtonPress()
+
+    public Text GetTerminalText()
+    {
+        return terminalText;
+    }
+    public bool GetTerminalEnabled()
+    {
+        return terminalText.IsActive();
+    }
+
+
+    IEnumerator IncorrectButtonPress()
     {
         lightpuzzleScript.notUnlockedButtonPress();
         incorrectmessage.enabled = true;
@@ -274,7 +298,7 @@ public class RaycastPlayer : MonoBehaviour
         yield return new WaitForSeconds(5);
         incorrectmessage.enabled = false;
     }
-    IEnumerator interactTowersEarly()
+    IEnumerator InteractTowersEarly()
     {
         incorrectmessage.enabled = true;
         incorrectmessage.text = "I don't know what to do here yet...";
@@ -283,14 +307,14 @@ public class RaycastPlayer : MonoBehaviour
         yield return new WaitForSeconds(3);
         incorrectmessage.enabled = false;
     }
-    IEnumerator earlyComputer()
+    IEnumerator EarlyComputer()
     {
         incorrectmessage.enabled = true;
         incorrectmessage.text = "The computer terminal is off.";
         yield return new WaitForSeconds(5);
         incorrectmessage.enabled = false;
     }
-    IEnumerator doorLocked()
+    IEnumerator DoorLocked()
     {
         incorrectmessage.enabled = true;
         incorrectmessage.text = "The door is locked.";
@@ -307,7 +331,7 @@ public class RaycastPlayer : MonoBehaviour
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("GameWinScene");
     }
-    public void closeBookText()
+    public void CloseBookText()
     {
         if (bookTextDisplay.enabled == true)
         {
@@ -321,7 +345,7 @@ public class RaycastPlayer : MonoBehaviour
 
         }
     }
-    public void closeTerminalText()
+    public void CloseTerminalText()
     {
         if (terminalText.enabled == true)
         {

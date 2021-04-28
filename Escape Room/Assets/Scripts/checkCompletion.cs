@@ -14,6 +14,6 @@ public class checkCompletion : MonoBehaviour
     }
     public void checkPuzzle()
     {
-        script.checkPuzzle();
+        script.CheckPuzzle();
     }
 }

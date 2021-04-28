@@ -518,7 +518,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60eb7d906d2d67046bed84d0966dca13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: {fileID: 392884063}
+--- !u!1 &262075980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 709042578537749612, guid: 6d8816e63354a734d816271eb0fa9996,
+    type: 3}
+  m_PrefabInstance: {fileID: 1102657502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &326682024
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +914,9 @@ MonoBehaviour:
   emissionColour: {fileID: 2100000, guid: e0d276bcc38cff24cb2864816c78f59f, type: 2}
   timeScript: {fileID: 392884070}
   audio: {fileID: 392884072}
+  obj1: {fileID: 1149354027}
+  obj2: {fileID: 2021329159}
+  obj3: {fileID: 262075980}
 --- !u!114 &392884068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -964,6 +972,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d367659b003d74998f2beb6349234e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensitivityX: 0
+  sensitivityY: 0
 --- !u!82 &392884072
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1434,6 +1444,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Towers of Hanoi Pole
       objectReference: {fileID: 0}
+    - target: {fileID: 709042578537749612, guid: 6d8816e63354a734d816271eb0fa9996,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4579140126886096511, guid: 6d8816e63354a734d816271eb0fa9996,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1442,12 +1457,12 @@ PrefabInstance:
     - target: {fileID: 4579140126886096511, guid: 6d8816e63354a734d816271eb0fa9996,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.014
+      value: 8.031
       objectReference: {fileID: 0}
     - target: {fileID: 4579140126886096511, guid: 6d8816e63354a734d816271eb0fa9996,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.521
+      value: 15.56
       objectReference: {fileID: 0}
     - target: {fileID: 4579140126886096511, guid: 6d8816e63354a734d816271eb0fa9996,
         type: 3}
@@ -1942,6 +1957,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Towers of Hanoi Pole (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 709042578537749612, guid: 6d8816e63354a734d816271eb0fa9996,
+        type: 3}
+      propertyPath: m_TagString
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4579140126886096511, guid: 6d8816e63354a734d816271eb0fa9996,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1950,12 +1970,12 @@ PrefabInstance:
     - target: {fileID: 4579140126886096511, guid: 6d8816e63354a734d816271eb0fa9996,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.992
+      value: 8.031
       objectReference: {fileID: 0}
     - target: {fileID: 4579140126886096511, guid: 6d8816e63354a734d816271eb0fa9996,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.494
+      value: 15.56
       objectReference: {fileID: 0}
     - target: {fileID: 4579140126886096511, guid: 6d8816e63354a734d816271eb0fa9996,
         type: 3}
@@ -2096,6 +2116,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1149354027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2080556291349128478, guid: e0982bd06eb351549b425163dbc070a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1608357661675207118}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1181654591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2732,6 +2758,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020283709}
   m_CullTransparentMesh: 0
+--- !u!1 &2021329159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 709042578537749612, guid: 6d8816e63354a734d816271eb0fa9996,
+    type: 3}
+  m_PrefabInstance: {fileID: 696132745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2055216313
 GameObject:
   m_ObjectHideFlags: 0
@@ -2902,7 +2934,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60eb7d906d2d67046bed84d0966dca13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: {fileID: 392884063}
 --- !u!114 &2119323209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3904,6 +3935,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Towers of Hanoi 4 Ring
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080556291349128478, guid: e0982bd06eb351549b425163dbc070a8,
+        type: 3}
+      propertyPath: m_TagString
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3063792675196458765, guid: e0982bd06eb351549b425163dbc070a8,
         type: 3}
