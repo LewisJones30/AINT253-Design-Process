@@ -1,17 +1,17 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ButtonPress
+    - GameProgessionScript
     - LightPuzzle
+    - MoveCamera
     - MovementScript
     - ObjectClicker
     - RaycastPlayer
     - SceneNav
     - Timer
     - UniHumanoid.HumanPoseClip
-    - buttonPress
     - checkCompletion
-    - gameProgessionScript
-    - moveCamera
     - towersScene
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
@@ -642,13 +642,13 @@ ScriptsOnlyBuild:
       Hash: 9b6012a8c2a2e4ec609bd0433c4b1b05
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: moveCamera
+    className: MoveCamera
   - hash:
       serializedVersion: 2
       Hash: ed4cf0b8bc2d6655443f130951b42689
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: gameProgessionScript
+    className: GameProgessionScript
   - hash:
       serializedVersion: 2
       Hash: 7b33d4835f13664421998cea0564394b
@@ -744,7 +744,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: buttonPress
+    className: ButtonPress
   - hash:
       serializedVersion: 2
       Hash: 11de6e5dcc69955f43e492847819fce0
@@ -879,7 +879,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 3ef6ba33b21db91bf1c5cf208196a3de
+      Hash: b3fa8071292fe0d9fa8844500dcf218d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ObjectClicker
@@ -956,5 +956,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/towersOfHanoiPuzScene.unity
   - Assets/Scenes/GameLossScene.unity
   - Assets/Scenes/GameWinScene.unity
-  playerPath: C:/Users/Lewis/Documents/GitHub/AINT253-Design-Process/Version 1.0.1/Escape
+  playerPath: C:/Users/Lewis/Documents/GitHub/AINT253-Design-Process/Escape Room Build/Escape
     Room.exe
