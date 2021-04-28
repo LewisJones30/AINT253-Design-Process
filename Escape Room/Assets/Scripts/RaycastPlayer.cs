@@ -51,6 +51,10 @@ public class RaycastPlayer : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
+            if (Cursor.lockState == CursorLockMode.Confined)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
             if (terminalBackground.enabled)
             {
                 terminalBackground.enabled = false;
@@ -217,6 +221,7 @@ public class RaycastPlayer : MonoBehaviour
                         close.gameObject.SetActive(true);
                         closeText.enabled = true;
                         bookTextDisplay.enabled = true;
+                        //Cursor.lockState = CursorLockMode.None;
 
                     }
                 }
